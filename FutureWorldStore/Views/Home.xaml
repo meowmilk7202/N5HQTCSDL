@@ -377,7 +377,7 @@
                     <Grid Width="240">
                         <Label
                             x:Name="lbHours"
-                            FontSize="48"
+                            FontSize="40"
                             FontWeight="DemiBold"
                             Foreground="#4a4a4a"
                             HorizontalAlignment="Left"
@@ -387,12 +387,12 @@
 
                         <Label
                             x:Name="lbDate"
-                            FontSize="18"
+                            FontSize="15"
                             FontWeight="DemiBold"
                             Foreground="#4a4a4a"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            Margin="49,96,0,0"
+                            Margin="49,84,0,0"
                             Content="Thứ 5, 16/06/2022"/>
                     </Grid>
 
@@ -406,10 +406,14 @@
         <Border x:Name="GDBorder"
             Margin="242,161,-2,-1" RenderTransformOrigin="0.498,0.476">
             <Border.Background>
-                <ImageBrush ImageSource="Body3_DienThoai.png"/>
+                <ImageBrush/>
             </Border.Background>
 
+
             <Grid Height="560" VerticalAlignment="Bottom">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Body3_DienThoai.png"/>
+                </Grid.Background>
                 <!--Điện Thoại-->
 
                 <!--tab author-->
@@ -432,9 +436,6 @@
 
                 <Grid x:Name="grvDienThoai" Visibility="Hidden" >
 
-                    <!--Hãng điện thoại-->
-
-                    <!--Hãng điện thoại-->
                     <Label 
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left" 
@@ -734,7 +735,9 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
+
                 <Grid x:Name="grvHangDienThoai" Visibility="Hidden" >
+
 
                     <!--Hãng điện thoại-->
 
@@ -775,7 +778,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="198,130,0,0"
+                        Margin="180,130,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -807,7 +810,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="198,162,0,0"
+                        Margin="180,162,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -830,7 +833,9 @@
                     <CheckBox x:Name="statuss" Content="Đang kinh doanh" HorizontalAlignment="Left" Margin="132,214,0,0" VerticalAlignment="Top" FontSize="16px" />
 
                 </Grid>
-                <Grid x:Name="grvNhaCungCap" Visibility="Hidden" >
+
+                <Grid x:Name="grvNhaCungCap" Visibility="Hidden">
+
 
                     <!--Hãng điện thoại-->
 
