@@ -15,7 +15,6 @@ using System.Data;
 using FutureWorldStore.Controls;
 namespace FutureWorldStore.Views
 {
-
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
@@ -23,10 +22,19 @@ namespace FutureWorldStore.Views
     {
         private FutureWorldStore.Views.Home homeWindow = null!;
         private string err = null!;
+        
         public Login()
         {
             InitializeComponent();
-           // imgHCMUTE.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath("./assets/img/dai-hoc-su-pham-tphcm.png")));
+            //frmDangNhap.Icon = new BitmapImage(new Uri("./IMG/Icon2.jpg"));
+            /*            BitmapDecoder uriBitmap = BitmapDecoder.Create(new Uri("IMG/Icon2.jpg", UriKind.Relative),
+                                                                                BitmapCreateOptions.None,
+                                                                                BitmapCacheOption.Default);
+
+                        this.frmDangNhap.Icon = uriBitmap.Frames[0];
+                            //new IconBitmapDecoder(new Uri(System.IO.Path.GetFullPath("IMG\\Icon2.jpg")));
+                        InitializeComponent();
+            // imgHCMUTE.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath("./assets/img/dai-hoc-su-pham-tphcm.png")));*/
         }
         #region Xử lý
         private void txtUsername_GotFocus(object sender, RoutedEventArgs e)

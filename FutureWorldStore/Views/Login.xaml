@@ -1,11 +1,14 @@
-﻿<Window x:Class="FutureWorldStore.Views.Login"
+﻿<Window
+        x:Name="frmDangNhap"
+        x:Class="FutureWorldStore.Views.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FutureWorldStore.Views"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
+        Title="Login" Height="450" Width="800"
+        Icon="/Views/z3855608866922_194c80fdb20e854a2dc3937e5e98a071.jpg">
     <Grid>
         <Grid.Background>
             <ImageBrush/>
