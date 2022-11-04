@@ -430,7 +430,7 @@
                 <!--tab help-->
 
 
-                <Grid x:Name="grvDienThoai" Visibility="Hidden" d:IsHidden="True">
+                <Grid x:Name="grvDienThoai" Visibility="Hidden" >
 
                     <!--Hãng điện thoại-->
 
@@ -734,7 +734,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvHangDienThoai" Visibility="Visible" d:IsHidden="True">
+                <Grid x:Name="grvHangDienThoai" Visibility="Hidden" >
 
                     <!--Hãng điện thoại-->
 
@@ -830,7 +830,7 @@
                     <CheckBox x:Name="statuss" Content="Đang kinh doanh" HorizontalAlignment="Left" Margin="132,214,0,0" VerticalAlignment="Top" FontSize="16px" />
 
                 </Grid>
-                <Grid x:Name="grvNhaCungCap" Visibility="Hidden" d:IsHidden="True">
+                <Grid x:Name="grvNhaCungCap" Visibility="Hidden" >
 
                     <!--Hãng điện thoại-->
 
@@ -1073,7 +1073,7 @@
                     </TextBox>
 
                 </Grid>
-                <Grid x:Name="grvNhapKho" Visibility="Visible">
+                <Grid x:Name="grvNhapKho" Visibility="Hidden">
 
                     <!--Hãng điện thoại-->
 
@@ -1298,7 +1298,7 @@
                     <CheckBox x:Name="checkboxStatusNhapKho" Content="Đã xử lý" HorizontalAlignment="Left" FontSize="16" Margin="160,202,0,0" VerticalAlignment="Top"/>
 
                 </Grid>
-                <Grid x:Name="grvNhanVien" Visibility="Hidden" d:IsHidden="True">
+                <Grid x:Name="grvNhanVien" Visibility="Hidden" >
 
                     <!--Hãng điện thoại-->
 
@@ -1602,7 +1602,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvKhachHang" Visibility="Hidden">
+                <Grid x:Name="grvKhachHang" Visibility="Visible">
 
                     <!--Hãng điện thoại-->
 
@@ -1747,8 +1747,7 @@
                         FontSize="16"
                         FontWeight="DemiBold"
                         Margin="16,144,0,0"
-                        Content="Trạng Thái
-                        "/>
+                        Content="Trạng Thái                         "/>
 
                     <TextBox
                         x:Name="txtStatusKH"

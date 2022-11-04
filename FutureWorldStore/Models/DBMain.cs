@@ -11,16 +11,13 @@ namespace FutureWorldStore.Models
 
     class DBMain
     {
-<<<<<<< HEAD
 
         string ConnStr = @"Data Source=DESKTOP-FTESQMM;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123456";
         //String ConnStr = "Data Source=DESKTOP-2IK0A0H\\SQLEXPRESS;Initial Catalog=Library_Manager;Integrated Security=True";
        
-=======
-        string ConnStr = @"Data Source=QUANGHUY;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123";
+        //string ConnStr = @"Data Source=QUANGHUY;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123";
         //string ConnStr = @"Data Source=DESKTOP-FTESQMM;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123456";
 
->>>>>>> fd0aa94c116d364422d53daa2f6bb6572f8b6648
         //string ConnStr = @"Data Source=" + datasource + ";Initial Catalog=" + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password;
         SqlConnection conn = null!;
         SqlCommand comm = null!;
