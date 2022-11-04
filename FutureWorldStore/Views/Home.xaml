@@ -430,7 +430,7 @@
                 <!--tab help-->
 
 
-                <Grid x:Name="grvDienThoai" Visibility="Visible" d:IsHidden="True">
+                <Grid x:Name="grvDienThoai" Visibility="Hidden" d:IsHidden="True">
 
                     <!--Hãng điện thoại-->
 
@@ -734,7 +734,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvHangDienThoai" Visibility="Hidden" d:IsHidden="True">
+                <Grid x:Name="grvHangDienThoai" Visibility="Visible" d:IsHidden="True">
 
                     <!--Hãng điện thoại-->
 

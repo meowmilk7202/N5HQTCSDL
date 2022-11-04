@@ -30,7 +30,7 @@
                 </WrapPanel>
 
                 <!--frm login-->
-                <Grid x:Name="frmLogin" Margin="10,0,0,0" Visibility="Hidden">
+                <Grid x:Name="frmLogin" Margin="10,0,0,0" Visibility="Visible">
                     <!--header-->
                     <Label 
                         VerticalAlignment="Top"
@@ -198,7 +198,7 @@
                 </Grid>
 
                 <!--frm change password-->
-                <Grid x:Name="frmChangePassword" Margin="-281,0,-278.2,-114" Visibility="Visible">
+                <Grid x:Name="frmChangePassword" Margin="-281,0,-278.2,-114" Visibility="Hidden">
                     <Grid.Background>
                         <ImageBrush/>
                     </Grid.Background>
