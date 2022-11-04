@@ -1,4 +1,5 @@
-﻿using FutureWorldStore.Models;
+﻿using FutureWorldStore.Controls;
+using FutureWorldStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,9 +22,9 @@ namespace Library_Manager.BS_Layer
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);
         }
 
-        public bool Add(string idNhapKho, string idNV, string idNCC, string status, ref string err)
+        public bool Add(string idNhapKho, string idNhanVien, string idNCC, string ngayNhapKho, string soLuong, string thanhTien, string status, ref string err)
         {
-            string sqlString = $"exec sp_ReviseNhapKho '{idNhapKho}','{idNV}',N'{idNCC}', {status},'Insert'";
+            string sqlString = $"exec sp_ReviseNhapKho '{idNhapKho}','{idNhanVien}',N'{idNCC}','{ngayNhapKho}','{soLuong}','{thanhTien}', {status},'Insert'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool Update(string idNhapKho, string idNV, string idNCC, string status, ref string err)

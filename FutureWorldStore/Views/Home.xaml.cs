@@ -323,10 +323,10 @@ namespace FutureWorldStore.Views
             string ngayNhapKho = dpkNgayNK.Text.Trim();
             string soLuong = txtTongSoLuong.Text.Trim();
             string thanhTien = txtTienNhapKho.Text.Trim();
-            string status = txtStatusNhapKho.Text.Trim();
+            string status = checkboxStatusNhapKho.IsChecked == true ? "1" : "0";
             try
             {
-                if (nhapKho.Add(idNhapKho, idNhanVien, idNCC, ngayNhapKho, soLuong, thanhTien, ref err))
+                if (nhapKho.Add(idNhapKho, idNhanVien, idNCC, ngayNhapKho, soLuong, thanhTien,status, ref err))
                     MessageBox.Show("Thêm thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show(err);
@@ -561,7 +561,6 @@ namespace FutureWorldStore.Views
             txtHDT.Clear();
             statuss.IsChecked = false;
         }
-<<<<<<< HEAD
         private void ClearNhaCungCap()
         {
             txtidNhaCungCap.Clear();
@@ -581,7 +580,6 @@ namespace FutureWorldStore.Views
             txtStatusNCC.Clear();
         }
 
-=======
 
         //ClearKhachHang
 
@@ -591,7 +589,6 @@ namespace FutureWorldStore.Views
             txtTenKH.Clear();
             statuss.Focusable = false;
         }
->>>>>>> ed5d0a393e5c8f084ab9d241c8ba7dbcb92afe49
         private void DeleteDienThoai()
         {
             string idDt = txtIdDienThoai.Text.Trim();
@@ -648,7 +645,6 @@ namespace FutureWorldStore.Views
             }
         }
 
-<<<<<<< HEAD
         private void DeleteNhapKho()
         {
             string idNhapKho = txtIdNhapKho.Text.Trim();
@@ -662,297 +658,293 @@ namespace FutureWorldStore.Views
                 else
                     MessageBox.Show(err);
                 loadNhapKho();
-=======
-        //DeleteKhachHang
-        private void DeleteKhachHang()
-        {
-            string idKH = txtIdKH.Text.Trim();
-            try
-            {
-                if (khachHang.Delete(idKH, ref err))
-                {
-                    MessageBox.Show("Xóa thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                    MessageBox.Show(err);
-                loadNhaCungCap();
->>>>>>> ed5d0a393e5c8f084ab9d241c8ba7dbcb92afe49
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 err = ex.Message;
             }
         }
-        #endregion
+                //DeleteKhachHang
+                private void DeleteKhachHang()
+                {
+                    string idKH = txtIdKH.Text.Trim();
+                    try
+                    {
+                        if (khachHang.Delete(idKH, ref err))
+                        {
+                            MessageBox.Show("Xóa thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        else
+                            MessageBox.Show(err);
+                        loadNhaCungCap();
+                    }
+                    catch (Exception ex)
+                    {
+                        err = ex.Message;
+                    }
+                }
+                #endregion
 
-        #region Btn
-        private void btnDienThoai_Click(object sender, RoutedEventArgs e)
-        {
-            dgvTab_Capture_Action(btnDienThoai, grvDienThoai);
-            this.loadDienThoai();
-        }
+                #region Btn
+                private void btnDienThoai_Click(object sender, RoutedEventArgs e)
+                {
+                    dgvTab_Capture_Action(btnDienThoai, grvDienThoai);
+                    this.loadDienThoai();
+                }
 
-        private void btnNhanVien_Click(object sender, RoutedEventArgs e)
-        {
-            dgvTab_Capture_Action(btnNhanVien, grvNhanVien);
-            this.loadNhanVien();
-        }
+                private void btnNhanVien_Click(object sender, RoutedEventArgs e)
+                {
+                    dgvTab_Capture_Action(btnNhanVien, grvNhanVien);
+                    this.loadNhanVien();
+                }
 
-        private void btnThongKe_Click(object sender, RoutedEventArgs e)
-        {
-            dgvTab_Capture_Action(btnThongKe, grvThongKeDT);
-            this.loadThongKe();
-        }
-        private void btnHangDienThoai_Click(object sender, RoutedEventArgs e)
-        {
-            dgvTab_Capture_Action(btnHangDienThoai, grvHangDienThoai);
-            this.loadHangDienThoai();
-        }
+                private void btnThongKe_Click(object sender, RoutedEventArgs e)
+                {
+                    dgvTab_Capture_Action(btnThongKe, grvThongKeDT);
+                    this.loadThongKe();
+                }
+                private void btnHangDienThoai_Click(object sender, RoutedEventArgs e)
+                {
+                    dgvTab_Capture_Action(btnHangDienThoai, grvHangDienThoai);
+                    this.loadHangDienThoai();
+                }
 
-        private void btnNhaCungCap_Click(object sender, RoutedEventArgs e)
-        {
-            dgvTab_Capture_Action(btnNhaCungCap, grvNhaCungCap);
-            this.loadNhaCungCap();
-        }
+                private void btnNhaCungCap_Click(object sender, RoutedEventArgs e)
+                {
+                    dgvTab_Capture_Action(btnNhaCungCap, grvNhaCungCap);
+                    this.loadNhaCungCap();
+                }
 
-        private void btnNhapKho_Click(object sender, RoutedEventArgs e)
-        {
-            dgvTab_Capture_Action(btnNhapKho, grvNhapKho);
-            this.loadNhapKho();
-        }
+                private void btnNhapKho_Click(object sender, RoutedEventArgs e)
+                {
+                    dgvTab_Capture_Action(btnNhapKho, grvNhapKho);
+                    this.loadNhapKho();
+                }
 
-        private void btnInHoaDon_Click(object sender, RoutedEventArgs e)
-        {
+                private void btnInHoaDon_Click(object sender, RoutedEventArgs e)
+                {
+
+                }
+
+                private void btnHoaDon_Click(object sender, RoutedEventArgs e)
+                {
+                    dgvTab_Capture_Action(btnHoaDon, grvHoaDon);
+                    this.loadHoaDon();
+                }
+
+
+                private void btnKhachHang_Click(object sender, RoutedEventArgs e)
+                {
+                    dgvTab_Capture_Action(btnKhachHang, grvKhachHang);
+                    this.loadKhachHang();
+                }
+                private void btnAdd_Click(object sender, RoutedEventArgs e)
+                {
+
+                    if (grvDienThoai.Visibility == Visibility.Visible)
+                    {
+                        if (!checkAdd)
+                        {
+                            txtIdDienThoai.Visibility = Visibility.Visible;
+                            lblIdDT.Visibility = Visibility.Visible;
+                            checkAdd = true;
+                        }
+                        else
+                        {
+                            addDienThoai();
+                            checkAdd = false;
+                            txtIdDienThoai.Visibility = Visibility.Hidden;
+                            lblIdDT.Visibility = Visibility.Hidden;
+                        }
+                    }
+
+                    if (grvHangDienThoai.Visibility == Visibility.Visible)
+                        addHangDienThoai();
+
+                    if (grvNhaCungCap.Visibility == Visibility.Visible)
+                        addNhaCungCap();
+                    if (grvNhapKho.Visibility == Visibility.Visible)
+                        addNhapKho();
+
+                    if (grvKhachHang.Visibility == Visibility.Visible)
+                        addKhachHang();
+
+                }
+                private void btnReload_Click(object sender, RoutedEventArgs e)
+                {
+                    if (grvDienThoai.Visibility == Visibility.Visible)
+                        this.loadDienThoai();
+                    if (grvHangDienThoai.Visibility == Visibility.Visible)
+                        this.loadHangDienThoai();
+                    if (grvNhaCungCap.Visibility == Visibility.Visible)
+                        this.loadNhaCungCap();
+                    if (grvNhapKho.Visibility == Visibility.Visible)
+                        this.loadNhapKho();
+                    if (grvNhanVien.Visibility == Visibility.Visible)
+                        this.loadNhanVien();
+                    if (grvKhachHang.Visibility == Visibility.Visible)
+                        this.loadKhachHang();
+                    if (grvThongKeDT.Visibility == Visibility.Visible)
+                        this.loadThongKe();
+                    if (grvHoaDon.Visibility == Visibility.Visible)
+                        this.loadHoaDon();
+                }
+
+                private void btnClose_Click(object sender, RoutedEventArgs e)
+                {
+                    Application.Current.Shutdown();
+                }
+
+                private void btnChange_Click(object sender, RoutedEventArgs e)
+                {
+                    if (grvDienThoai.Visibility == Visibility.Visible)
+                        EditDienThoai();
+                    if (grvHangDienThoai.Visibility == Visibility.Visible)
+                        EditHangDienThoai();
+                    if (grvNhaCungCap.Visibility == Visibility.Visible)
+                        EditNhaCungCap();
+                    if (grvNhapKho.Visibility == Visibility.Visible)
+                        EditNhapKho();
+                    if (grvNhanVien.Visibility == Visibility.Visible)
+                        this.loadNhanVien();
+                    if (grvKhachHang.Visibility == Visibility.Visible)
+                        this.EditKhachHang();
+                    if (grvThongKeDT.Visibility == Visibility.Visible)
+                        this.loadThongKe();
+                    if (grvHoaDon.Visibility == Visibility.Visible)
+                        this.loadHoaDon();
+                }
+
+                private void btnDelete_Click(object sender, RoutedEventArgs e)
+                {
+                    if (grvDienThoai.Visibility == Visibility.Visible)
+                        DeleteDienThoai();
+                    if (grvHangDienThoai.Visibility == Visibility.Visible)
+                        DeleteHangDienThoai();
+                    if (grvNhaCungCap.Visibility == Visibility.Visible)
+                        DeleteNhaCungCap();
+                    if (grvNhapKho.Visibility == Visibility.Visible)
+                        DeleteNhapKho();
+
+
+                    if (grvKhachHang.Visibility == Visibility.Visible)
+                        DeleteKhachHang();
+
+                }
+
+                private void btnClear_Click(object sender, RoutedEventArgs e)
+                {
+                    if (grvDienThoai.Visibility == Visibility.Visible)
+                        this.ClearDienThoai();
+                    if (grvHangDienThoai.Visibility == Visibility.Visible)
+                        this.ClearHangDienThoai();
+                    if (grvNhaCungCap.Visibility == Visibility.Visible)
+                        this.ClearNhaCungCap();
+                    if (grvNhapKho.Visibility == Visibility.Visible)
+                        this.ClearNhapKho();
+                    if (grvKhachHang.Visibility == Visibility.Visible)
+                        this.ClearKhachHang();
+                }
+
+                private void btnSearch_Click(object sender, RoutedEventArgs e)
+                {
+                    if (grvDienThoai.Visibility == Visibility.Visible)
+                        this.SearchDienThoai();
+                    if (grvHangDienThoai.Visibility == Visibility.Visible)
+                        this.searchHangDienThoai();
+                    if (grvNhaCungCap.Visibility == Visibility.Visible)
+                        this.searchNhaCungCap();
+                    if (grvNhapKho.Visibility == Visibility.Visible)
+                        this.searchNhapKho();
+                }
+
+                #endregion
+
+                #region SelectionChange
+                private void dgDienThoai_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+                {
+                    try
+                    {
+                        DataRow row = (dgDienThoai.SelectedItem as DataRowView)?.Row!;
+                        if (row != null)
+                        {
+                            txtHangDienThoai.Text = row["idHangDT"].ToString()!.Trim();
+                            txtTenDienThoai.Text = row["tenDienThoai"].ToString()!.Trim();
+                            txtMauSac.Text = row["mauSac"].ToString()!.Trim();
+                            txtDungLuong.Text = row["dungLuong"].ToString()!.Trim();
+                            txtBoNho.Text = row["boNho"].ToString()!.Trim();
+                            txtSoLuong.Text = row["soLuong"].ToString()!.Trim();
+                            txtGiaBan.Text = row["giaBan"].ToString()!.Trim();
+                            txtKhuyenMai.Text = row["khuyenMai"].ToString()!.Trim();
+                            txtIdDienThoai.Text = row["idDienThoai"].ToString()!.Trim();
+
+                            if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 11" && row["mauSac"].ToString()!.Trim() == "Trắng")
+                                Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-11-do-1-1-1-org.jpg"))));
+
+                            Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-11-do-1-1-1-org.jpgip11_den.jpg"))));
+                            if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 11" && row["mauSac"].ToString()!.Trim() == "Đen")
+                                Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/ip11_den.jpg"))));
+                            else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 11" && row["mauSac"].ToString()!.Trim() == "Trắng")
+                                Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-11-trang-1-2-org.jpg"))));
+                            else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 11" && row["mauSac"].ToString()!.Trim() == "Đỏ")
+                                Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-11-do-1-1-1-org.jpg"))));
+                            else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 12" && row["mauSac"].ToString()!.Trim() == "Đen")
+                                Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-12-den-1-1-org.jpg"))));
+                            else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 12" && row["mauSac"].ToString()!.Trim() == "Trắng")
+                                Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-12-trang-1-1-org.jpg"))));
+                            else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 12" && row["mauSac"].ToString()!.Trim() == "Đỏ")
+                                Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-12-do-1-1-org.jpg"))));
+
+
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                }
+
+                private void dgHangDienThoai_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+                {
+                    try
+                    {
+                        DataRow row = (dgHangDienThoai.SelectedItem as DataRowView)?.Row!;
+                        if (row != null)
+                        {
+                            txtMHDT.Text = row["idHangDT"].ToString()!.Trim();
+                            txtHDT.Text = row["tenHangDT"].ToString()!.Trim();
+                            statuss.IsChecked = row["status"].ToString()!.Trim() == "1" ? true : false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+                private void dgNhaCungCap_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+                {
+                    try
+                    {
+                        DataRow row = (dgNhaCungCap.SelectedItem as DataRowView)?.Row!;
+                        if (row != null)
+                        {
+                            txtidNhaCungCap.Text = row["idNCC"].ToString()!.Trim();
+                            txttenNhaCungCap.Text = row["tenNCC"].ToString()!.Trim();
+                            txtSDTNCC.Text = row["sdt"].ToString()!.Trim();
+                            txtEmailNCC.Text = row["email"].ToString()!.Trim();
+                            txtDiaChiNCC.Text = row["diachi"].ToString()!.Trim();
+                            txtStatusNCC.Text = row["status"].ToString()!.Trim();
+                            //statuss.IsChecked = row["status"].ToString()!.Trim() == "1" ? true : false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                #endregion
+            }
             
-        }
-
-        private void btnHoaDon_Click(object sender, RoutedEventArgs e)
-        {
-            dgvTab_Capture_Action(btnHoaDon, grvHoaDon);
-            this.loadHoaDon();
-        }
-
-
-        private void btnKhachHang_Click(object sender, RoutedEventArgs e)
-        {
-            dgvTab_Capture_Action(btnKhachHang, grvKhachHang);
-            this.loadKhachHang();
-        }
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (grvDienThoai.Visibility == Visibility.Visible)
-            {
-                if (!checkAdd)
-                {
-                    txtIdDienThoai.Visibility = Visibility.Visible;
-                    lblIdDT.Visibility = Visibility.Visible;
-                    checkAdd = true;
-                }
-                else
-                {
-                    addDienThoai();
-                    checkAdd = false;
-                    txtIdDienThoai.Visibility = Visibility.Hidden;
-                    lblIdDT.Visibility = Visibility.Hidden;
-                }
-            }
-
-            if (grvHangDienThoai.Visibility == Visibility.Visible)
-                addHangDienThoai();
-
-            if (grvNhaCungCap.Visibility == Visibility.Visible)
-                addNhaCungCap();
-<<<<<<< HEAD
-            if (grvNhapKho.Visibility == Visibility.Visible)
-                addNhapKho();
-            
-=======
-            if (grvKhachHang.Visibility == Visibility.Visible)
-                addKhachHang();
-
->>>>>>> ed5d0a393e5c8f084ab9d241c8ba7dbcb92afe49
-        }
-        private void btnReload_Click(object sender, RoutedEventArgs e)
-        {
-            if (grvDienThoai.Visibility == Visibility.Visible)
-                this.loadDienThoai();
-            if (grvHangDienThoai.Visibility == Visibility.Visible)
-                this.loadHangDienThoai();
-            if (grvNhaCungCap.Visibility == Visibility.Visible)
-                this.loadNhaCungCap();
-            if (grvNhapKho.Visibility == Visibility.Visible)
-                this.loadNhapKho();
-            if (grvNhanVien.Visibility == Visibility.Visible)
-               this.loadNhanVien();
-            if (grvKhachHang.Visibility == Visibility.Visible)
-                this.loadKhachHang();
-            if (grvThongKeDT.Visibility == Visibility.Visible)
-                this.loadThongKe();
-            if (grvHoaDon.Visibility == Visibility.Visible)
-                this.loadHoaDon();
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void btnChange_Click(object sender, RoutedEventArgs e)
-        {
-            if (grvDienThoai.Visibility == Visibility.Visible)
-                EditDienThoai();
-            if (grvHangDienThoai.Visibility == Visibility.Visible)
-                EditHangDienThoai();
-            if (grvNhaCungCap.Visibility == Visibility.Visible)
-                EditNhaCungCap();
-            if (grvNhapKho.Visibility == Visibility.Visible)
-                EditNhapKho();
-            if (grvNhanVien.Visibility == Visibility.Visible)
-                this.loadNhanVien();
-            if (grvKhachHang.Visibility == Visibility.Visible)
-                this.EditKhachHang();
-            if (grvThongKeDT.Visibility == Visibility.Visible)
-                this.loadThongKe();
-            if (grvHoaDon.Visibility == Visibility.Visible)
-                this.loadHoaDon();
-        }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-            if (grvDienThoai.Visibility == Visibility.Visible)
-                DeleteDienThoai();
-            if (grvHangDienThoai.Visibility == Visibility.Visible)
-                DeleteHangDienThoai();
-            if (grvNhaCungCap.Visibility == Visibility.Visible)
-                DeleteNhaCungCap();
-<<<<<<< HEAD
-            if (grvNhapKho.Visibility == Visibility.Visible)
-                DeleteNhapKho();
-
-
-=======
-            if (grvKhachHang.Visibility == Visibility.Visible)
-                DeleteKhachHang();
- 
->>>>>>> ed5d0a393e5c8f084ab9d241c8ba7dbcb92afe49
-        }
-
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            if (grvDienThoai.Visibility == Visibility.Visible)
-                this.ClearDienThoai();
-            if (grvHangDienThoai.Visibility == Visibility.Visible)
-                this.ClearHangDienThoai();
-<<<<<<< HEAD
-            if (grvNhaCungCap.Visibility == Visibility.Visible)
-                this.ClearNhaCungCap();
-            if (grvNhapKho.Visibility == Visibility.Visible)
-                this.ClearNhapKho();
-=======
-            if (grvKhachHang.Visibility == Visibility.Visible)
-                this.ClearKhachHang();
->>>>>>> ed5d0a393e5c8f084ab9d241c8ba7dbcb92afe49
-        }
-
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
-        {
-            if (grvDienThoai.Visibility == Visibility.Visible)
-                this.SearchDienThoai();
-            if (grvHangDienThoai.Visibility == Visibility.Visible)
-                this.searchHangDienThoai();
-            if (grvNhaCungCap.Visibility == Visibility.Visible)
-                this.searchNhaCungCap();
-            if (grvNhapKho.Visibility == Visibility.Visible)
-                this.searchNhapKho();
-        }
-
-        #endregion
-
-        #region SelectionChange
-        private void dgDienThoai_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        {
-            try
-            {
-                DataRow row = (dgDienThoai.SelectedItem as DataRowView)?.Row!;
-                if (row != null)
-                {
-                    txtHangDienThoai.Text = row["idHangDT"].ToString()!.Trim();
-                    txtTenDienThoai.Text = row["tenDienThoai"].ToString()!.Trim();
-                    txtMauSac.Text = row["mauSac"].ToString()!.Trim();
-                    txtDungLuong.Text = row["dungLuong"].ToString()!.Trim();
-                    txtBoNho.Text = row["boNho"].ToString()!.Trim();
-                    txtSoLuong.Text = row["soLuong"].ToString()!.Trim();
-                    txtGiaBan.Text = row["giaBan"].ToString()!.Trim();
-                    txtKhuyenMai.Text = row["khuyenMai"].ToString()!.Trim();
-                    txtIdDienThoai.Text = row["idDienThoai"].ToString()!.Trim();
-
-                    if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 11" && row["mauSac"].ToString()!.Trim() == "Trắng")
-                        Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-11-do-1-1-1-org.jpg"))));
-
-                    Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-11-do-1-1-1-org.jpgip11_den.jpg"))));
-                    if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 11" && row["mauSac"].ToString()!.Trim() == "Đen")
-                        Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/ip11_den.jpg"))));
-                    else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 11" && row["mauSac"].ToString()!.Trim() == "Trắng")
-                        Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-11-trang-1-2-org.jpg"))));
-                    else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 11" && row["mauSac"].ToString()!.Trim() == "Đỏ")
-                        Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-11-do-1-1-1-org.jpg"))));
-                    else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 12" && row["mauSac"].ToString()!.Trim() == "Đen")
-                        Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-12-den-1-1-org.jpg"))));
-                    else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 12" && row["mauSac"].ToString()!.Trim() == "Trắng")
-                        Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-12-trang-1-1-org.jpg"))));
-                    else if (row["tenDienThoai"].ToString()!.Trim() == "IPhone 12" && row["mauSac"].ToString()!.Trim() == "Đỏ")
-                        Anhhhh.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("F:/CNTT/N3/Ky1/Hệ quản trị CSDL/Finaly_Project/FutureWorldStore/FutureWorldStore/Images/iphone-12-do-1-1-org.jpg"))));
-
-
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void dgHangDienThoai_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        {
-            try
-            {
-                DataRow row = (dgHangDienThoai.SelectedItem as DataRowView)?.Row!;
-                if (row != null)
-                {
-                    txtMHDT.Text = row["idHangDT"].ToString()!.Trim();
-                    txtHDT.Text = row["tenHangDT"].ToString()!.Trim();
-                    statuss.IsChecked = row["status"].ToString()!.Trim() == "1" ? true : false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void dgNhaCungCap_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        {
-            try
-            {
-                DataRow row = (dgNhaCungCap.SelectedItem as DataRowView)?.Row!;
-                if (row != null)
-                {
-                    txtidNhaCungCap.Text = row["idNCC"].ToString()!.Trim();
-                    txttenNhaCungCap.Text = row["tenNCC"].ToString()!.Trim();
-                    txtSDTNCC.Text = row["sdt"].ToString()!.Trim();
-                    txtEmailNCC.Text = row["email"].ToString()!.Trim();
-                    txtDiaChiNCC.Text = row["diachi"].ToString()!.Trim();
-                    txtStatusNCC.Text = row["status"].ToString()!.Trim();
-                    //statuss.IsChecked = row["status"].ToString()!.Trim() == "1" ? true : false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        #endregion
-    }
 
 }
