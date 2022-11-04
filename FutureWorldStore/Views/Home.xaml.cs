@@ -22,6 +22,7 @@ namespace FutureWorldStore.Views
     /// <summary>
     /// Interaction logic for Home.xaml
     /// </summary>
+    
     public partial class Home : Window
     {
 
@@ -290,6 +291,30 @@ namespace FutureWorldStore.Views
                 err = ex.Message;
             }
         }
+
+        private void addNhapKho()
+        {
+            string idNhapKho = txtIdNhapKho.Text.Trim();
+            string idNhanVien = txtMaNV.Text.Trim();
+            string idNCC = txtMaNCC.Text.Trim();
+            string ngayNhapKho = dpkNgayNK.Text.Trim();
+            string soLuong = txtTongSoLuong.Text.Trim();
+            string thanhTien = txtTienNhapKho.Text.Trim();
+            string status = txtStatusNhapKho.Text.Trim();
+            try
+            {
+                if (nhapKho.Add(idNhapKho, idNhanVien, idNCC, ngayNhapKho, soLuong, thanhTien, ref err))
+                    MessageBox.Show("Thêm thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show(err);
+                // Hiển thị lại view ncc
+                loadNhaCungCap();
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+        }
         #endregion
 
         #region Search
@@ -313,9 +338,9 @@ namespace FutureWorldStore.Views
                 dataTable = ds.Tables[0];
                 dgDienThoai.ItemsSource = ds.Tables[0].DefaultView;
             }
-            catch
+            catch (Exception ex)
             {
-
+                err = ex.Message;
             }
         }
         private void searchHangDienThoai()
@@ -332,9 +357,53 @@ namespace FutureWorldStore.Views
                 dataTable = ds.Tables[0];
                 dgHangDienThoai.ItemsSource = ds.Tables[0].DefaultView;
             }
-            catch
+            catch (Exception ex)
             {
+                err = ex.Message;
+            }
+        }
 
+        private void searchNhaCungCap()
+        {
+            string idNCC = txtidNhaCungCap.Text.Trim();
+            string tenNCC = txttenNhaCungCap.Text.Trim();
+            string sdt = txtSDTNCC.Text.Trim();
+            string email = txtEmailNCC.Text.Trim();
+            string diaChi = txtDiaChiNCC.Text.Trim();
+            string status = txtStatusNCC.Text.Trim();
+            try
+            {
+                dataTable = new DataTable();
+                dataTable.Clear();
+                DataSet ds = nhaCungCap.Search(idNCC, tenNCC, sdt, email, diaChi, status,ref err);
+                dataTable = ds.Tables[0];
+                dgNhaCungCap.ItemsSource = ds.Tables[0].DefaultView;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+        }
+
+        private void searchNhapKho()
+        {
+            string idNCC = txtidNhaCungCap.Text.Trim();
+            string tenNCC = txttenNhaCungCap.Text.Trim();
+            string sdt = txtSDTNCC.Text.Trim();
+            string email = txtEmailNCC.Text.Trim();
+            string diaChi = txtDiaChiNCC.Text.Trim();
+            string status = txtStatusNCC.Text.Trim();
+            try
+            {
+                dataTable = new DataTable();
+                dataTable.Clear();
+                DataSet ds = nhaCungCap.Search(idNCC, tenNCC, sdt, email, diaChi, status, ref err);
+                dataTable = ds.Tables[0];
+                dgNhaCungCap.ItemsSource = ds.Tables[0].DefaultView;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
             }
         }
         #endregion
@@ -449,8 +518,27 @@ namespace FutureWorldStore.Views
         {
             txtMHDT.Clear();
             txtHDT.Clear();
-            statuss.Focusable = false;
+            statuss.IsChecked = false;
         }
+        private void ClearNhaCungCap()
+        {
+            txtidNhaCungCap.Clear();
+            txttenNhaCungCap.Clear();
+            txtSDTNCC.Clear();
+            txtEmailNCC.Clear();
+            txtDiaChiNCC.Clear();
+            txtStatusNCC.Clear();
+        }
+        private void ClearNhapKho()
+        {
+            txtidNhaCungCap.Clear();
+            txttenNhaCungCap.Clear();
+            txtSDTNCC.Clear();
+            txtEmailNCC.Clear();
+            txtDiaChiNCC.Clear();
+            txtStatusNCC.Clear();
+        }
+
         private void DeleteDienThoai()
         {
             string idDt = txtIdDienThoai.Text.Trim();
@@ -506,6 +594,26 @@ namespace FutureWorldStore.Views
                 err = ex.Message;
             }
         }
+
+        private void DeleteNhapKho()
+        {
+            string idNhapKho = txtIdNhapKho.Text.Trim();
+            try
+            {
+                if (nhapKho.Delete(idNhapKho, ref err))
+
+                {
+                    MessageBox.Show("Xóa thành công!", "Nhà Cung Cấp", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                    MessageBox.Show(err);
+                loadNhapKho();
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+        }
         #endregion
 
         #region Btn
@@ -546,7 +654,7 @@ namespace FutureWorldStore.Views
 
         private void btnInHoaDon_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnHoaDon_Click(object sender, RoutedEventArgs e)
@@ -586,6 +694,9 @@ namespace FutureWorldStore.Views
 
             if (grvNhaCungCap.Visibility == Visibility.Visible)
                 addNhaCungCap();
+            if (grvNhapKho.Visibility == Visibility.Visible)
+                addNhapKho();
+            
         }
         private void btnReload_Click(object sender, RoutedEventArgs e)
         {
@@ -621,7 +732,7 @@ namespace FutureWorldStore.Views
             if (grvNhaCungCap.Visibility == Visibility.Visible)
                 EditNhaCungCap();
             if (grvNhapKho.Visibility == Visibility.Visible)
-                this.loadNhapKho();
+                EditNhapKho();
             if (grvNhanVien.Visibility == Visibility.Visible)
                 this.loadNhanVien();
             if (grvKhachHang.Visibility == Visibility.Visible)
@@ -640,23 +751,34 @@ namespace FutureWorldStore.Views
                 DeleteHangDienThoai();
             if (grvNhaCungCap.Visibility == Visibility.Visible)
                 DeleteNhaCungCap();
- 
+            if (grvNhapKho.Visibility == Visibility.Visible)
+                DeleteNhapKho();
+
+
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             if (grvDienThoai.Visibility == Visibility.Visible)
                 this.ClearDienThoai();
-            if (btnHangDienThoai.Visibility == Visibility.Visible)
+            if (grvHangDienThoai.Visibility == Visibility.Visible)
                 this.ClearHangDienThoai();
+            if (grvNhaCungCap.Visibility == Visibility.Visible)
+                this.ClearNhaCungCap();
+            if (grvNhapKho.Visibility == Visibility.Visible)
+                this.ClearNhapKho();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             if (grvDienThoai.Visibility == Visibility.Visible)
                 this.SearchDienThoai();
-            else if (btnHangDienThoai.Visibility == Visibility.Visible)
+            if (grvHangDienThoai.Visibility == Visibility.Visible)
                 this.searchHangDienThoai();
+            if (grvNhaCungCap.Visibility == Visibility.Visible)
+                this.searchNhaCungCap();
+            if (grvNhapKho.Visibility == Visibility.Visible)
+                this.searchNhapKho();
         }
 
         #endregion

@@ -14,8 +14,7 @@ namespace FutureWorldStore.Controls
     {
         DBMain db = null!;
         private string view = " v_infNhanVien";
-        private string tableName = "NHANVIEN";
-        string statemantype = "Update";
+        private string statemantype = "Update";
         public NhanVien()
         {
             db = new DBMain();
