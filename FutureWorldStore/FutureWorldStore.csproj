@@ -134,9 +134,6 @@
     <Resource Include="Images\housekeeping_100px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\iphone_spinner_100px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Views\iphone_spinner_100px.png" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +150,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\search_more_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\header2_DienThoai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\BoderLL_DienThoai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Body3_DienThoai.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
