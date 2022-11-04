@@ -136,6 +136,23 @@
   <ItemGroup>
     <Resource Include="Images\iphone_spinner_100px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Views\iphone_spinner_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\plus_+_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\support_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Delete_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\housekeeping_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\search_more_100px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

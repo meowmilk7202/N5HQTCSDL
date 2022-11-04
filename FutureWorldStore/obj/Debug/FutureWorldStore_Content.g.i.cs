@@ -8,20 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-11-do-1-1-1-org.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-11-trang-1-2-org.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-11-xanh-la-1-1-org.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-12-1-2.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-12-den-1-1-org.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-12-do-1-1-org.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-12-trang-1-1-org.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-12-xanh-duong-1-1-org.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-12-xanh-la-1-1-org.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-13-1-2.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-13-1-3.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-13-1-4.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-13-xanh-1.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-xi-den-200x200.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/iphone-xi-vang-200x200.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/search_more_100px.png")]
 
 

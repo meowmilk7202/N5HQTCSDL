@@ -2373,7 +2373,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/search_more_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="search_more_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2405,7 +2405,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/Delete_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="Delete_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                     <Button.RenderTransform>
                         <TransformGroup>
@@ -2445,7 +2445,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/support_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="support_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2477,7 +2477,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/plus_+_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="plus_+_100px.png" Stretch="Uniform" TileMode="None"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2509,7 +2509,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/housekeeping_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="housekeeping_100px.png" Stretch="Uniform" TileMode="None"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2541,7 +2541,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/iphone_spinner_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="iphone_spinner_100px.png" Stretch="Uniform" TileMode="None"/>
                     </Button.Background>
                 </Button>
             </Grid>
