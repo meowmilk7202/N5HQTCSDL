@@ -76,6 +76,7 @@ namespace FutureWorldStore.Views
         // btn chuyển qua trang change password
         private void btnChangePassword_Click(object sender, RoutedEventArgs e)
         {
+            BG.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("IMG\\Change.png"))));
             this.frmChangePassword.Visibility = Visibility.Visible;
             this.frmLogin.Visibility = Visibility.Hidden;
         }
@@ -114,6 +115,7 @@ namespace FutureWorldStore.Views
         // btn chuyển qua trang login
         private void btnChangePassword_Change_Click(object sender, RoutedEventArgs e)
         {
+            BG.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("IMG\\Login1.png"))));
             this.frmChangePassword.Visibility = Visibility.Hidden;
             this.frmLogin.Visibility = Visibility.Visible;
         }

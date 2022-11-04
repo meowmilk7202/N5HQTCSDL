@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/search_more_100px.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/body3_dienthoai.png")]
 
 
