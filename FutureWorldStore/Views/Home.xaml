@@ -1073,7 +1073,7 @@
                     </TextBox>
 
                 </Grid>
-                <Grid x:Name="grvNhapKho" Visibility="Hidden">
+                <Grid x:Name="grvNhapKho" Visibility="Visible">
 
                     <!--Hãng điện thoại-->
 
@@ -1198,7 +1198,7 @@
                         Content="Ngày Nhập Kho"/>
 
                     <TextBox
-                        x:Name="txtNgayNK"
+                        x:Name="txtTienNhapKho"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
                         Width="240"
@@ -1295,9 +1295,10 @@
                         FontWeight="DemiBold"
                         Margin="16,175,0,0"
                         Content="Thành Tiền"/>
+                    <CheckBox x:Name="checkboxStatusNhapKho" Content="Đã xử lý" HorizontalAlignment="Left" FontSize="16" Margin="160,202,0,0" VerticalAlignment="Top"/>
 
                 </Grid>
-                <Grid x:Name="grvNhanVien" Visibility="Hidden">
+                <Grid x:Name="grvNhanVien" Visibility="Hidden" d:IsHidden="True">
 
                     <!--Hãng điện thoại-->
 

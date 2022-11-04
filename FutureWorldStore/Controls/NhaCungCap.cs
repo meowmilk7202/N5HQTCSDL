@@ -12,7 +12,6 @@ namespace FutureWorldStore.Controls
     {
         DBMain db = null!;
         private string view = " v_infNhaCungCap";
-        string statemantype = "Update";
         public NhaCungCap()
         {
             db = new DBMain();
@@ -45,7 +44,7 @@ namespace FutureWorldStore.Controls
             if (tenNCC != "")
                 sqlString += $"tenNCC = N'{tenNCC}' and ";
             if (sdt != "")
-                sqlString += $"mauSac = N'{sdt}' and ";
+                sqlString += $"sdt = N'{sdt}' and ";
             if (email != "")
                 sqlString += $"email = '{email}' and ";
             if (diaChi != "")
