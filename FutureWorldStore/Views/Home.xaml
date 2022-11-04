@@ -1064,7 +1064,7 @@
                     </TextBox>
 
                 </Grid>
-                <Grid x:Name="grvNhapKho" Visibility="Visible">
+                <Grid x:Name="grvNhapKho" Visibility="Hidden">
 
                     <!--Hãng điện thoại-->
 
@@ -1592,7 +1592,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvKhachHang" Visibility="Hidden">
+                <Grid x:Name="grvKhachHang" Visibility="Visible">
 
                     <!--Hãng điện thoại-->
 

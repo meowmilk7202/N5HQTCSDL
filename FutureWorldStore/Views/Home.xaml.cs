@@ -263,6 +263,29 @@ namespace FutureWorldStore.Views
             }
         }
 
+        private void addKhachHang()
+        {
+            string idKH = txtidNhaCungCap.Text.Trim();
+            string tenKH = txttenNhaCungCap.Text.Trim();
+            string sdtKH = txtSDTNCC.Text.Trim();
+            //string diemThuong = txtEmailNCC.Text.Trim();
+            //string diachiNCC = txtDiaChiNCC.Text.Trim();
+            string status = txtStatusKH.Text.Trim();
+            try
+            {
+                if (khachHang.Add(idKH,tenKH, sdtKH, status, ref err))
+                    MessageBox.Show("Thêm thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show(err);
+                // Hiển thị lại view ncc
+                loadNhaCungCap();
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+        }
+
         private void addDienThoai()
         {
             string idDt = txtIdDienThoai.Text.Trim();
@@ -399,7 +422,7 @@ namespace FutureWorldStore.Views
             {
                 if (nhaCungCap.Update(maNCC, tenNCC, sdt, email, diaChi, status, ref err))
                 {
-                    MessageBox.Show("Cập nhật thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Cập nhật thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                     MessageBox.Show(err);
@@ -416,7 +439,25 @@ namespace FutureWorldStore.Views
         }
         private void EditKhachHang()
         {
-
+            string idKH = txtidNhaCungCap.Text.Trim();
+            string tenKH = txttenNhaCungCap.Text.Trim();
+            string sdtKH = txtSDTNCC.Text.Trim();
+            //string diemThuong = txtEmailNCC.Text.Trim();
+            //string diachiNCC = txtDiaChiNCC.Text.Trim();
+            string status = txtStatusKH.Text.Trim();
+            try
+            {
+                if (khachHang.Update(idKH, tenKH, sdtKH, status, ref err))
+                    MessageBox.Show("Sửa thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show(err);
+                // Hiển thị lại view ncc
+                loadNhaCungCap();
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
         }
         private void EditHoaDon()
         {
@@ -449,6 +490,15 @@ namespace FutureWorldStore.Views
         {
             txtMHDT.Clear();
             txtHDT.Clear();
+            statuss.Focusable = false;
+        }
+
+        //ClearKhachHang
+
+        private void ClearKhachHang()
+        {
+            txtIdKH.Clear();
+            txtTenKH.Clear();
             statuss.Focusable = false;
         }
         private void DeleteDienThoai()
@@ -496,6 +546,26 @@ namespace FutureWorldStore.Views
                 if (nhaCungCap.Delete(idNCC, ref err))
                 {
                     MessageBox.Show("Xóa thành công!", "Nhà Cung Cấp", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                    MessageBox.Show(err);
+                loadNhaCungCap();
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+        }
+
+        //DeleteKhachHang
+        private void DeleteKhachHang()
+        {
+            string idKH = txtIdKH.Text.Trim();
+            try
+            {
+                if (khachHang.Delete(idKH, ref err))
+                {
+                    MessageBox.Show("Xóa thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                     MessageBox.Show(err);
@@ -586,6 +656,9 @@ namespace FutureWorldStore.Views
 
             if (grvNhaCungCap.Visibility == Visibility.Visible)
                 addNhaCungCap();
+            if (grvKhachHang.Visibility == Visibility.Visible)
+                addKhachHang();
+
         }
         private void btnReload_Click(object sender, RoutedEventArgs e)
         {
@@ -625,7 +698,7 @@ namespace FutureWorldStore.Views
             if (grvNhanVien.Visibility == Visibility.Visible)
                 this.loadNhanVien();
             if (grvKhachHang.Visibility == Visibility.Visible)
-                this.loadKhachHang();
+                this.EditKhachHang();
             if (grvThongKeDT.Visibility == Visibility.Visible)
                 this.loadThongKe();
             if (grvHoaDon.Visibility == Visibility.Visible)
@@ -640,6 +713,8 @@ namespace FutureWorldStore.Views
                 DeleteHangDienThoai();
             if (grvNhaCungCap.Visibility == Visibility.Visible)
                 DeleteNhaCungCap();
+            if (grvKhachHang.Visibility == Visibility.Visible)
+                DeleteKhachHang();
  
         }
 
@@ -647,8 +722,10 @@ namespace FutureWorldStore.Views
         {
             if (grvDienThoai.Visibility == Visibility.Visible)
                 this.ClearDienThoai();
-            if (btnHangDienThoai.Visibility == Visibility.Visible)
+            if (grvHangDienThoai.Visibility == Visibility.Visible)
                 this.ClearHangDienThoai();
+            if (grvKhachHang.Visibility == Visibility.Visible)
+                this.ClearKhachHang();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
