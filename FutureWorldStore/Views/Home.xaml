@@ -13,6 +13,9 @@
             BorderThickness="0,0,1,0"
             BorderBrush="#ccc"
             Margin="0,160,0,0">
+            <Border.Background>
+                <ImageBrush ImageSource="BoderLL_DienThoai.png"/>
+            </Border.Background>
             <StackPanel 
                 x:Name="tab"
                 Width="240"
@@ -359,6 +362,9 @@
             VerticalAlignment="Top"
             BorderThickness="0,0,0,1"
             BorderBrush="#ccc">
+            <Border.Background>
+                <ImageBrush ImageSource="header2_DienThoai.png"/>
+            </Border.Background>
             <Grid x:Name="TB">
 
                 <!--background-->
@@ -399,6 +405,9 @@
         <!--content-->
         <Border x:Name="GDBorder"
             Margin="242,161,-2,-1" RenderTransformOrigin="0.498,0.476">
+            <Border.Background>
+                <ImageBrush ImageSource="Body3_DienThoai.png"/>
+            </Border.Background>
 
             <Grid Height="560" VerticalAlignment="Bottom">
                 <!--Điện Thoại-->
@@ -421,7 +430,7 @@
                 <!--tab help-->
 
 
-                <Grid x:Name="grvDienThoai" Visibility="Hidden" d:IsHidden="True">
+                <Grid x:Name="grvDienThoai" Visibility="Visible" d:IsHidden="True">
 
                     <!--Hãng điện thoại-->
 
@@ -725,7 +734,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvHangDienThoai" Visibility="Visible" d:IsHidden="True">
+                <Grid x:Name="grvHangDienThoai" Visibility="Hidden" d:IsHidden="True">
 
                     <!--Hãng điện thoại-->
 
@@ -821,7 +830,7 @@
                     <CheckBox x:Name="statuss" Content="Đang kinh doanh" HorizontalAlignment="Left" Margin="132,214,0,0" VerticalAlignment="Top" FontSize="16px" />
 
                 </Grid>
-                <Grid x:Name="grvNhaCungCap" Visibility="Visible" d:IsHidden="True">
+                <Grid x:Name="grvNhaCungCap" Visibility="Hidden" d:IsHidden="True">
 
                     <!--Hãng điện thoại-->
 
@@ -1064,7 +1073,7 @@
                     </TextBox>
 
                 </Grid>
-                <Grid x:Name="grvNhapKho" Visibility="Visible">
+                <Grid x:Name="grvNhapKho" Visibility="Hidden">
 
                     <!--Hãng điện thoại-->
 
@@ -1245,7 +1254,7 @@
 
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdNCC1"
@@ -1593,7 +1602,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvKhachHang" Visibility="Hidden">
+                <Grid x:Name="grvKhachHang" Visibility="Visible">
 
                     <!--Hãng điện thoại-->
 
@@ -2374,7 +2383,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/search_more_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="search_more_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2406,7 +2415,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/Delete_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="Delete_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                     <Button.RenderTransform>
                         <TransformGroup>
@@ -2446,7 +2455,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/support_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="support_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2478,7 +2487,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/plus_+_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="plus_+_100px.png" Stretch="Uniform" TileMode="None"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2510,7 +2519,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/housekeeping_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="housekeeping_100px.png" Stretch="Uniform" TileMode="None"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2542,7 +2551,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/72ppi/iphone_spinner_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="iphone_spinner_100px.png" Stretch="Uniform" TileMode="None"/>
                     </Button.Background>
                 </Button>
             </Grid>

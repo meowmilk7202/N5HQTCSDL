@@ -7,18 +7,19 @@
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
 
-        <Canvas Margin="-10,10,10,-10">
+        <Canvas x:Name="BG"
+            Margin="-10,10,10,-10">
             <Canvas.Background>
-                <LinearGradientBrush StartPoint="0,0.01" EndPoint="1,0.01">
-                    <GradientStop Color="#4282ce" Offset="0"/>
-                    <GradientStop Color="#FF762070" Offset="1"/>
-                </LinearGradientBrush>
+                <ImageBrush ImageSource="Change.png"/>
             </Canvas.Background>
         </Canvas>
 
 
-        <Border Margin="32, 104" BorderThickness="0" CornerRadius="8" Background="#fefefe">
+        <Border Margin="465,103,71.6,102" BorderThickness="0" CornerRadius="8" Background="#fefefe">
             <Grid Height="292" VerticalAlignment="Bottom">
                 <WrapPanel Width="300" HorizontalAlignment="Left">
                     <Image
@@ -29,7 +30,7 @@
                 </WrapPanel>
 
                 <!--frm login-->
-                <Grid x:Name="frmLogin" Margin="300,0,0,0" Visibility="Visible">
+                <Grid x:Name="frmLogin" Margin="10,0,0,0" Visibility="Hidden">
                     <!--header-->
                     <Label 
                         VerticalAlignment="Top"
@@ -197,7 +198,10 @@
                 </Grid>
 
                 <!--frm change password-->
-                <Grid x:Name="frmChangePassword" Margin="300,0,0,-114" Visibility="Hidden">
+                <Grid x:Name="frmChangePassword" Margin="-281,0,-278.2,-114" Visibility="Visible">
+                    <Grid.Background>
+                        <ImageBrush/>
+                    </Grid.Background>
                     <!--header-->
                     <Label 
                         VerticalAlignment="Top"
@@ -240,7 +244,7 @@
                         HorizontalAlignment="Center"
                         Width="240"
                         Height="24"
-                        Margin="93,128,95,0"
+                        Margin="287,129,289,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -295,7 +299,7 @@
                         HorizontalAlignment="Center"
                         Width="240"
                         Height="24"
-                        Margin="92,164,96,0"
+                        Margin="286,163,290,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
