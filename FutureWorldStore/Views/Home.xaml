@@ -1601,7 +1601,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvKhachHang" Visibility="Visible">
+                <Grid x:Name="grvKhachHang" Visibility="Hidden">
 
                     <!--Hãng điện thoại-->
 
