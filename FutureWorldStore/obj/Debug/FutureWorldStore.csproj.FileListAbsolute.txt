@@ -33,3 +33,20 @@ D:\Nam3\DBMS\Finaly_Project\FutureWorldStore\FutureWorldStore\obj\Debug\FutureWo
 D:\Nam3\DBMS\Finaly_Project\FutureWorldStore\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.CoreCompileInputs.cache
 D:\Nam3\DBMS\Finaly_Project\FutureWorldStore\FutureWorldStore\obj\Debug\FutureWorldStore.exe
 D:\Nam3\DBMS\Finaly_Project\FutureWorldStore\FutureWorldStore\obj\Debug\FutureWorldStore.pdb
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe.config
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.pdb
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.AssemblyReference.cache
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.g.cs
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.g.cs
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\App.g.cs
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.cache
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.lref
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.baml
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.baml
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.g.resources
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.Properties.Resources.resources
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.GenerateResource.cache
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.CoreCompileInputs.cache
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.exe
+F:\CNTT\N3\Ky1\Hệ quản trị CSDL\MN\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.pdb
