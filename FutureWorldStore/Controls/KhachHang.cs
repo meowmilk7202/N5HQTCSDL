@@ -21,19 +21,19 @@ namespace FutureWorldStore.Controls
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);
         }
 
-        public bool Add(string idKH, string tenKH, string sdt, string status, ref string err)
+        public bool Add(string idKH, string tenKH, string sdt, ref string err)
         {
-            string sqlString = $"exec sp_ReviseKhachHang '{idKH}','{tenKH}',N'{sdt}',{status},'Insert'";
+            string sqlString = $"exec sp_ReviseKhachHang '{idKH}',N'{tenKH}','{sdt}'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool Update(string idKH, string tenKH, string sdt, string status, ref string err)
+        public bool Update(string idKH, string tenKH, string sdt, ref string err)
         {
-            string sqlString = $"exec sp_ReviseKhachHang '{idKH}','{tenKH}',N'{sdt}',{status},'Update'";
+            string sqlString = $"exec sp_ReviseKhachHang '{idKH}',N'{tenKH}','{sdt}','','Update'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool Delete(string idKH, ref string err)
         {
-            string sqlString = $"exec sp_deleteKhachHang '{idKH}'";
+            string sqlString = $"exec sp_ReviseKhachHang '{idKH}','','','','Delete'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public DataSet Search(string idKH, string tenKH, string sdt, string status, ref string err)

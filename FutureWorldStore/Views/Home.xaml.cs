@@ -266,20 +266,18 @@ namespace FutureWorldStore.Views
 
         private void addKhachHang()
         {
-            string idKH = txtidNhaCungCap.Text.Trim();
-            string tenKH = txttenNhaCungCap.Text.Trim();
-            string sdtKH = txtSDTNCC.Text.Trim();
-            //string diemThuong = txtEmailNCC.Text.Trim();
-            //string diachiNCC = txtDiaChiNCC.Text.Trim();
-            string status = txtStatusKH.Text.Trim();
+            string idKH = txtIdKH.Text.Trim();
+            string tenKH = txtTenKH.Text.Trim();
+            string sdtKH = txtSoDTKH.Text.Trim();
+
             try
             {
-                if (khachHang.Add(idKH,tenKH, sdtKH, status, ref err))
-                    MessageBox.Show("Thêm thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (khachHang.Add(idKH,tenKH, sdtKH, ref err))
+                    MessageBox.Show("Thêm thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show(err);
                 // Hiển thị lại view ncc
-                loadNhaCungCap();
+                loadKhachHang();
             }
             catch (Exception ex)
             {
@@ -432,9 +430,18 @@ namespace FutureWorldStore.Views
         #endregion
 
         #region Edit
+        private bool checkID(string id)
+        {
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                if (id == dataTable.Rows[i][0].ToString()!.Trim())
+                    return true;
+            }
+            return false;
+        }
         private void EditDienThoai()
         {
-            string idDt = txtIdDienThoai.Text.Trim();
+            string idDt = txtIdDienThoai.Text.Trim(); 
             string idHDT = txtHangDienThoai.Text.Trim();
             string nameDT = txtTenDienThoai.Text.Trim();
             string color = txtMauSac.Text.Trim();
@@ -444,20 +451,26 @@ namespace FutureWorldStore.Views
             string giaban = txtGiaBan.Text.Trim();
             string khuyenmai = txtKhuyenMai.Text.Trim();
             string status = soluong == "0" ? "0" : "1";
-            try
+            if (checkID(idDt))
             {
-                if (dt.Update(idDt, idHDT, nameDT, color, dungluong, bonho, soluong, giaban, khuyenmai, status, ref err))
+
+                try
                 {
-                    MessageBox.Show("Cập nhật thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (dt.Update(idDt, idHDT, nameDT, color, dungluong, bonho, soluong, giaban, khuyenmai, status, ref err))
+                    {
+                        MessageBox.Show("Cập nhật thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                        MessageBox.Show("Cập nhật thất bại!", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                    loadDienThoai();
                 }
-                else
-                    MessageBox.Show(err);
-                loadDienThoai();
-            }
-            catch (Exception ex)
-            {
-                err = ex.Message;
-            }
+                catch (Exception ex)
+                {
+                    err = ex.Message;
+                }
+            } 
+            else
+                MessageBox.Show("Sản phẩm không tồn tại!", "Điện Thoại", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         private void EditHangDienThoai()
         {
@@ -508,20 +521,20 @@ namespace FutureWorldStore.Views
         }
         private void EditKhachHang()
         {
-            string idKH = txtidNhaCungCap.Text.Trim();
-            string tenKH = txttenNhaCungCap.Text.Trim();
-            string sdtKH = txtSDTNCC.Text.Trim();
+            string idKH = txtIdKH.Text.Trim();
+            string tenKH = txtTenKH.Text.Trim();
+            string sdtKH = txtSoDTKH.Text.Trim();
             //string diemThuong = txtEmailNCC.Text.Trim();
             //string diachiNCC = txtDiaChiNCC.Text.Trim();
-            string status = txtStatusKH.Text.Trim();
+            //string status = txtStatusKH.Text.Trim();
             try
             {
-                if (khachHang.Update(idKH, tenKH, sdtKH, status, ref err))
+                if (khachHang.Update(idKH, tenKH, sdtKH, ref err))
                     MessageBox.Show("Sửa thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show(err);
                 // Hiển thị lại view ncc
-                loadNhaCungCap();
+                loadKhachHang();
             }
             catch (Exception ex)
             {
@@ -943,7 +956,28 @@ namespace FutureWorldStore.Views
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void dgKhachHang_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            try
+            {
+                DataRow row = (dgKhachHang.SelectedItem as DataRowView)?.Row!;
+                if (row != null)
+                {
+                    txtIdKH.Text = row["idKH"].ToString()!.Trim();
+                    txtTenKH.Text = row["tenKH"].ToString()!.Trim();
+                    txtSoDTKH.Text = row["sdt"].ToString()!.Trim();
+                    txtPoint.Text = row["diemThuong"].ToString()!.Trim();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         #endregion
+
+
     }
 
 

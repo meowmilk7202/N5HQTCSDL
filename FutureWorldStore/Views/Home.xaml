@@ -1748,39 +1748,9 @@
 
 
                     <!--Bộ Nhớ-->
-                    <Label 
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left" 
-                        Foreground="#4a4a4a"
-                        FontSize="16"
-                        FontWeight="DemiBold"
-                        Margin="16,144,0,0"
-                        Content="Trạng Thái                         "/>
-
-                    <TextBox
-                        x:Name="txtStatusKH"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,144,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
                     <!--Data-->
-                    <DataGrid x:Name="dgKhachHang" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgKhachHang" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgKhachHang_SelectedCellsChanged"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdDienThoai2"
