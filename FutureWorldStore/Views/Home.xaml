@@ -1262,7 +1262,7 @@
 
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdNCC1"
@@ -1576,7 +1576,7 @@
                     </TextBox>
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhanVien" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgNhanVien" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgNhanVien_SelectedCellsChanged"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdDienThoai1"
