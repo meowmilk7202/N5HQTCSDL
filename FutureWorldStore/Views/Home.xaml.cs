@@ -8,10 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using System.Data;
-using FutureWorldStore.Controls;
-using System.Data.SqlClient;
-using Library_Manager.BS_Layer;
+
 using System.Reflection;
 namespace FutureWorldStore.Views
 {
@@ -176,6 +173,20 @@ namespace FutureWorldStore.Views
                 DataSet ds = nhapKho.Get();
                 dataTable = ds.Tables[0];
                 dgNhapKho.ItemsSource = ds.Tables[0].DefaultView;
+
+                // xóa dữ liệu ban đầu trong Combobox
+                cbxIdNV.Items.Clear();
+                cbxIdNCC.Items.Clear();
+                // Lấy data hiển thị lên Combobox
+                DataSet dsNCC = nhaCungCap.GetId();
+                DataSet dsNV = nhanVien.GetID();
+                DataTable dtNCC = dsNCC.Tables[0];
+                DataTable dtNV = dsNV.Tables[0];
+                foreach (DataRow dt in dtNCC.Rows)
+                    cbxIdNCC.Items.Add(dt["idNCC"].ToString().Trim());
+
+                foreach (DataRow dt in dtNV.Rows)
+                    cbxIdNV.Items.Add(dt["idNV"].ToString().Trim());
             }
             catch (SqlException ex)
             {
@@ -329,21 +340,21 @@ namespace FutureWorldStore.Views
 
         private void addNhapKho()
         {
-            string idNhapKho = txtIdNhapKho.Text.Trim();
-            //string idNhanVien = txtMaNV.Text.Trim();
-            //string idNCC = txtMaNCC.Text.Trim();
-            string ngayNhapKho = dpkNgayNK.Text.Trim();
+            string idNK = txtIdNhapKho.Text.Trim();
+            string idNV = cbxIdNV.Text.Trim();
+            string idNCC = cbxIdNCC.Text.Trim();
+            string dateNK = dpkNgayNK.Text.Trim();
             string soLuong = txtTongSoLuong.Text.Trim();
-            string thanhTien = txtTienNhapKho.Text.Trim();
+            string tien = txtTienNhapKho.Text.Trim();
             string status = checkboxStatusNhapKho.IsChecked == true ? "1" : "0";
             try
             {
-                if (nhapKho.Add(idNhapKho, " ", " ", ngayNhapKho, soLuong, thanhTien,status, ref err))
+                if (nhapKho.Add(idNK, idNV, idNCC, dateNK, soLuong, tien, status, ref err))
                     MessageBox.Show("Thêm thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show(err);
                 // Hiển thị lại view ncc
-                loadNhaCungCap();
+                loadNhapKho();
             }
             catch (Exception ex)
             {
@@ -577,7 +588,28 @@ namespace FutureWorldStore.Views
         }
         private void EditNhapKho()
         {
+            string idNK = txtIdNhapKho.Text.Trim();
+            string idNV = cbxIdNV.Text.Trim();
+            string idNCC = cbxIdNCC.Text.Trim();
+            string dateNK = dpkNgayNK.Text.Trim();
+            string soLuong = txtTongSoLuong.Text.Trim();
+            string tien = txtTienNhapKho.Text.Trim();
+            string status = checkboxStatusNhapKho.IsChecked== true ? "1" : "0";
+            try
+            {
+                if(nhapKho.Update(idNK, idNV, idNCC, dateNK, soLuong, tien, status,ref err))
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Nhập kho", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                    MessageBox.Show(err);
+                loadNhapKho();
 
+            }
+            catch(Exception ex)
+            {
+                err = ex.Message;
+            }
         }
         private void EditKhachHang()
         {
@@ -664,12 +696,12 @@ namespace FutureWorldStore.Views
         }
         private void ClearNhapKho()
         {
-            txtidNhaCungCap.Clear();
-            txttenNhaCungCap.Clear();
-            txtSDTNCC.Clear();
-            txtEmailNCC.Clear();
-            txtDiaChiNCC.Clear();
-            txtStatusNCC.Clear();
+            txtIdNhapKho.Clear();
+            cbxIdNV.SelectedIndex = 0;
+            cbxIdNCC.SelectedIndex = 0;
+            dpkNgayNK.Text = "";
+            txtTongSoLuong.Clear();
+            txtTienNhapKho.Clear();
         }
         private void ClearNhanVien()
         {
@@ -996,10 +1028,7 @@ namespace FutureWorldStore.Views
         private void dgDienThoai_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             try
-            {
-                
-
-
+            {        
                 DataRow row = (dgDienThoai.SelectedItem as DataRowView)?.Row!;
                 if (row != null)
                 {
@@ -1133,7 +1162,26 @@ namespace FutureWorldStore.Views
 
         private void dgNhapKho_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            //cbxIdNV.ItemsSource = dgNhapKho.SelectedCells;
+            try
+            {
+                DataRow row = (dgNhapKho.SelectedItem as DataRowView)?.Row!;
+                if (row != null)
+                {
+                    txtIdNhapKho.Text = row["idNhapKho"].ToString()!.Trim();
+                    cbxIdNCC.Text = row["idNCC"].ToString()!.Trim();
+                    cbxIdNV.Text = row["idNV"].ToString()!.Trim();
+                    dpkNgayNK.Text = row["ngayNhapKho"].ToString()!.Trim();
+                    txtTongSoLuong.Text = row["tongSoLuong"].ToString()!.Trim();
+                    txtTienNhapKho.Text = row["thanhTien"].ToString()!.Trim();
+                    checkboxStatusNhapKho.IsChecked = row["status"].ToString()!.Trim() == "1" ? true : false;
+                }
+            }
+            catch
+            {
+
+            }
         }
+
+
     }
 }

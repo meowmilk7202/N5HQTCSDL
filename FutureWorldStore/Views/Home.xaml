@@ -1234,11 +1234,11 @@
                             </Style>
                         </TextBox.Resources>
                     </TextBox>
-                    <ComboBox x:Name="cbxIdNCC" HorizontalAlignment="Left" Margin="160,83,0,0" VerticalAlignment="Top" Width="236"/>
+                    <ComboBox x:Name="cbxIdNCC" HorizontalAlignment="Left" Margin="160,83,0,0" VerticalAlignment="Top" Width="240"/>
 
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgNhapKho_SelectedCellsChanged" />
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdNCC1"

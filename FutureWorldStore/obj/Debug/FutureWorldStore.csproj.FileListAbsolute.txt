@@ -1,76 +1,6 @@
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe.config
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.pdb
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.AssemblyReference.cache
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.SuggestedBindingRedirects.cache
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.g.cs
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.g.cs
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\App.g.cs
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.cache
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.lref
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.baml
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.baml
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.g.resources
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.Properties.Resources.resources
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.GenerateResource.cache
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.CoreCompileInputs.cache
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.exe
-D:\Nam3\DBMS\Git_Final\P\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.pdb
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe.config
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.pdb
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.AssemblyReference.cache
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.SuggestedBindingRedirects.cache
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.g.cs
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.g.cs
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\App.g.cs
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.cache
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.lref
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.baml
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.baml
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.g.resources
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.Properties.Resources.resources
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.GenerateResource.cache
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.CoreCompileInputs.cache
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.exe
-D:\Nam3\DBMS\Git_Final\Finally_Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.pdb
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe.config
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.pdb
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.AssemblyReference.cache
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.SuggestedBindingRedirects.cache
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.g.cs
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.g.cs
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\App.g.cs
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.cache
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.lref
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.baml
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.baml
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.g.resources
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.Properties.Resources.resources
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.GenerateResource.cache
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.CoreCompileInputs.cache
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.exe
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Finally Project\N5HQTCSDL\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.pdb
-<<<<<<< HEAD
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe.config
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.pdb
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.AssemblyReference.cache
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.g.cs
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.g.cs
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\App.g.cs
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.cache
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.lref
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.baml
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.baml
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.g.resources
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.Properties.Resources.resources
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.GenerateResource.cache
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.CoreCompileInputs.cache
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.exe
-C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.pdb
-=======
+E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe.config
+E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe
+E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.pdb
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.AssemblyReference.cache
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.SuggestedBindingRedirects.cache
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.g.cs
@@ -78,15 +8,11 @@ E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\Future
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\App.g.cs
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.cache
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore_MarkupCompile.lref
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.exe
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.pdb
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe.config
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.exe
-E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\bin\Debug\FutureWorldStore.pdb
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Home.baml
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\Views\Login.baml
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.g.resources
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.Properties.Resources.resources
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.GenerateResource.cache
 E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.csproj.CoreCompileInputs.cache
->>>>>>> 06130725cf65014fc64b726e7ae4540a51dc4f5c
+E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.exe
+E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\FutureWorldStore.pdb

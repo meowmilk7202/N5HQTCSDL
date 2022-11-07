@@ -27,9 +27,9 @@ namespace Library_Manager.BS_Layer
             string sqlString = $"exec sp_ReviseNhapKho '{idNhapKho}','{idNhanVien}',N'{idNCC}','{ngayNhapKho}','{soLuong}','{thanhTien}', {status},'Insert'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool Update(string idNhapKho, string idNV, string idNCC, string status, ref string err)
+        public bool Update(string idNK, string idNV, string idNCC, string dateNK, string soLuong, string tien, string status, ref string err)
         {
-            string sqlString = $"exec sp_ReviseNhapKho '{idNhapKho}','{idNV}',N'{idNCC}', {status},'Update'";
+            string sqlString = $"exec sp_ReviseNhapKho '{idNK}','{idNV}',N'{idNCC}','{dateNK}','{soLuong}','{tien}', {status},'Update'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool Delete(string idNhapKho, ref string err)

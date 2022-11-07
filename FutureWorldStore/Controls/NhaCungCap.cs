@@ -20,6 +20,10 @@ namespace FutureWorldStore.Controls
         {
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);
         }
+        public DataSet GetId()
+        {
+            return db.ExecuteQueryDataSet($"select idNCC from {view}", CommandType.Text);
+        }
         public bool Add(string idNCC, string tenNCC, string sdt, string email, string diaChi, string status , ref string err)
         {
             string sqlString = $"exec sp_reviseNCC '{idNCC}',N'{tenNCC}','{sdt}','{email}',N'{diaChi}'";
