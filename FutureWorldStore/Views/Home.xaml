@@ -2302,7 +2302,7 @@
                             BorderThickness="0"
                             Content=""
                             Cursor="Hand" HorizontalAlignment="Left"
-                            Margin="896,-5,0,480" Height="85" Click="btnSearch_Click"
+                            Margin="898,0,0,475" Height="85" Click="btnSearch_Click"
                             >
                     <Button.Resources>
                         <Style TargetType="{x:Type Button}">
@@ -2374,7 +2374,7 @@
                             BorderThickness="0"
                             Content=""
                             Cursor="Hand"
-                            Margin="0,-6,306,0" Width="52" VerticalAlignment="Top" Height="85" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Click="btnChange_Click"
+                            Margin="0,-6,321,0" Width="52" VerticalAlignment="Top" Height="85" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Click="btnChange_Click"
                             >
                     <Button.Resources>
                         <Style TargetType="{x:Type Button}">

@@ -427,6 +427,27 @@ namespace FutureWorldStore.Views
                 err = ex.Message;
             }
         }
+
+        private void searchKhachHang()
+        {
+            string idKH = txtIdKH.Text.Trim();
+            string tenKH = txtTenKH.Text.Trim();
+            string soDT = txtSoDTKH.Text.Trim();
+            string diemThuong = txtPoint.Text.Trim();
+
+            try
+            {
+                dataTable = new DataTable();
+                dataTable.Clear();
+                DataSet ds = khachHang.Search(idKH, tenKH, soDT, diemThuong, ref err);
+                dataTable = ds.Tables[0];
+                dgKhachHang.ItemsSource = ds.Tables[0].DefaultView;
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+        }
         #endregion
 
         #region Edit
@@ -524,12 +545,12 @@ namespace FutureWorldStore.Views
             string idKH = txtIdKH.Text.Trim();
             string tenKH = txtTenKH.Text.Trim();
             string sdtKH = txtSoDTKH.Text.Trim();
-            //string diemThuong = txtEmailNCC.Text.Trim();
+            string diemThuong = txtEmailNCC.Text.Trim();
             //string diachiNCC = txtDiaChiNCC.Text.Trim();
             //string status = txtStatusKH.Text.Trim();
             try
             {
-                if (khachHang.Update(idKH, tenKH, sdtKH, ref err))
+                if (khachHang.Update(idKH, tenKH, sdtKH, diemThuong,ref err))
                     MessageBox.Show("Sửa thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show(err);
@@ -871,6 +892,8 @@ namespace FutureWorldStore.Views
                 this.searchNhaCungCap();
             if (grvNhapKho.Visibility == Visibility.Visible)
                 this.searchNhapKho();
+            if (grvKhachHang.Visibility == Visibility.Visible)
+                this.searchKhachHang();
         }
 
         #endregion

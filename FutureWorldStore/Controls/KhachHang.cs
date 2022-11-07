@@ -26,7 +26,7 @@ namespace FutureWorldStore.Controls
             string sqlString = $"exec sp_ReviseKhachHang '{idKH}',N'{tenKH}','{sdt}','{0}'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool Update(string idKH, string tenKH, string sdt, ref string err)
+        public bool Update(string idKH, string tenKH, string sdt,string diemThuong, ref string err)
         {
             string sqlString = $"exec sp_ReviseKhachHang '{idKH}',N'{tenKH}','{sdt}','','Update'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
@@ -36,7 +36,7 @@ namespace FutureWorldStore.Controls
             string sqlString = $"exec sp_deleteKhachHang '{idKH}'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public DataSet Search(string idKH, string tenKH, string sdt, string status, ref string err)
+        public DataSet Search(string idKH, string tenKH, string sdt, string diemThuong, ref string err)
         {
 
             string sqlString = $"select * from KhachHang Where    ";
@@ -46,8 +46,8 @@ namespace FutureWorldStore.Controls
                 sqlString += $"sdt = N'{sdt}' and ";
             if (tenKH != "")
                 sqlString += $"tenKH = '{tenKH}' and ";
-            if (status.ToString() != "")
-                sqlString += $"status = {status} and ";
+            if (diemThuong.ToString() != "")
+                sqlString += $"status = {diemThuong} and ";
             sqlString = sqlString.Substring(0, sqlString.Length - 4);
             return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
