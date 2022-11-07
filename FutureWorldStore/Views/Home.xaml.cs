@@ -104,6 +104,11 @@ namespace FutureWorldStore.Views
         {
             try
             {
+                // xóa dữ liệu ban đầu trong DataGridView
+                dataTable = new DataTable();
+                dataTable.Clear();
+                // xóa dữ liệu ban đầu trong Combobox
+                cbHangDienThoai.Items.Clear();
                 // Lấy data hiển thị lên DataGridView
                 dataTable = new DataTable();
                 dataTable.Clear();
@@ -113,10 +118,8 @@ namespace FutureWorldStore.Views
                 // Lấy data hiển thị lên Combobox
                 DataSet dataSet = hangDienThoai.GetName();
                 DataTable dtable = dataSet.Tables[0];
-                foreach(DataRow dt in dtable.Rows)
-                {
-                    cbHangDienThoai.Items.Add(dt["idHangDT"].ToString().Trim());
-                }    
+                foreach(DataRow dt in dtable.Rows)                    
+                    cbHangDienThoai.Items.Add(dt["idHangDT"].ToString().Trim());  
             }
             catch (SqlException ex)
             {

@@ -437,7 +437,7 @@
                 <!--tab help-->
 
 
-                <Grid x:Name="grvDienThoai" Visibility="Visible" >
+                <Grid x:Name="grvDienThoai" Visibility="Hidden" >
 
                     <Label 
                         VerticalAlignment="Top"
@@ -1094,7 +1094,7 @@
                     </TextBox>
 
                 </Grid>
-                <Grid x:Name="grvNhapKho" Visibility="Hidden">
+                <Grid x:Name="grvNhapKho" Visibility="Visible">
 
                     <!--Hãng điện thoại-->
 
