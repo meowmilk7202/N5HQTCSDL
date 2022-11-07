@@ -4,13 +4,22 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\obj\Debug\
+=======
+E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\obj\Debug\
+>>>>>>> 06130725cf65014fc64b726e7ae4540a51dc4f5c
 FutureWorldStore
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\son\Desktop\DBMS\N5HQTCSDL\FutureWorldStore\App.xaml
 22099644272
+=======
+E:\HCMUTE\Năm 3\Hệ quản trị cơ sở dữ liệu\Project\N5HQTCSDL\FutureWorldStore\App.xaml
+2-1032991142
+>>>>>>> 06130725cf65014fc64b726e7ae4540a51dc4f5c
 
 20-99021479
 131569487696

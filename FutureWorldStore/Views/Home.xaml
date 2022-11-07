@@ -437,7 +437,7 @@
                 <!--tab help-->
 
 
-                <Grid x:Name="grvDienThoai" Visibility="Hidden" >
+                <Grid x:Name="grvDienThoai" Visibility="Visible" >
 
                     <Label 
                         VerticalAlignment="Top"
@@ -448,7 +448,7 @@
                         Margin="16,16,0,0"
                         Content="Hãng điện thoại"/>
 
-                    <TextBox
+                    <!--<TextBox
                         x:Name="txtHangDienThoai"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
@@ -467,8 +467,21 @@
                                 <Setter Property="Padding" Value="16,0" />
                             </Style>
                         </TextBox.Resources>
-                    </TextBox>
-
+                    </TextBox>-->
+                    <ComboBox
+                        x:Name="cbHangDienThoai"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="240"
+                        Height="24"
+                        Margin="160,16,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"                        
+                        Foreground="#4a4a4a" SelectionChanged="cbHangDienThoai_SelectionChanged"
+                    />
+                    
 
                     <!--Tên Dien Thoai-->
                     <Label 
@@ -1096,6 +1109,12 @@
                     <!--KhuyenMai-->
 
                     <!--Hãng điện thoại-->
+                    <ComboBox x:Name="cbxIdNV" HorizontalAlignment="Left" Margin="160,55,0,0" VerticalAlignment="Top" Width="236" >
+                        <ComboBox.ContextMenu>
+                            <ContextMenu/>
+                        </ComboBox.ContextMenu>
+                    </ComboBox>
+                    <!--Hãng điện thoại-->
                     <Label 
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left" 
@@ -1137,28 +1156,6 @@
                         Margin="16,48,0,0"
                         Content="Mã Nhân Viên"/>
 
-                    <TextBox
-                        x:Name="txtMaNV"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,48,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-
 
 
                     <!--Màu Sắc-->
@@ -1170,28 +1167,6 @@
                         FontWeight="DemiBold"
                         Margin="16,80,0,0"
                         Content="Nhà Cung Cấp"/>
-
-                    <TextBox
-                        x:Name="txtMaNCC"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,80,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
 
@@ -1259,10 +1234,11 @@
                             </Style>
                         </TextBox.Resources>
                     </TextBox>
+                    <ComboBox x:Name="cbxIdNCC" HorizontalAlignment="Left" Margin="160,83,0,0" VerticalAlignment="Top" Width="236"/>
 
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD"/>
+                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdNCC1"
@@ -1610,7 +1586,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvKhachHang" Visibility="Visible">
+                <Grid x:Name="grvKhachHang" Visibility="Hidden">
 
                     <!--Hãng điện thoại-->
 
@@ -2339,7 +2315,7 @@
                             BorderThickness="0"
                             Content=""
                             Cursor="Hand" HorizontalAlignment="Left"
-                            Margin="896,-5,0,480" Height="85" Click="btnSearch_Click"
+                            Margin="898,0,0,475" Height="85" Click="btnSearch_Click"
                             >
                     <Button.Resources>
                         <Style TargetType="{x:Type Button}">
@@ -2411,7 +2387,7 @@
                             BorderThickness="0"
                             Content=""
                             Cursor="Hand"
-                            Margin="0,-6,306,0" Width="52" VerticalAlignment="Top" Height="85" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Click="btnChange_Click"
+                            Margin="0,-6,321,0" Width="52" VerticalAlignment="Top" Height="85" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Click="btnChange_Click"
                             >
                     <Button.Resources>
                         <Style TargetType="{x:Type Button}">

@@ -8,7 +8,11 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-
+using System.Data;
+using FutureWorldStore.Controls;
+using System.Data.SqlClient;
+using Library_Manager.BS_Layer;
+using System.Reflection;
 namespace FutureWorldStore.Views
 {
     /// <summary>
@@ -69,8 +73,11 @@ namespace FutureWorldStore.Views
         private KhachHang khachHang = new KhachHang();
         //private Nha nhaCungCap = new NhaCungCap();
 
+    
 
         #region Load
+
+
         private void loadTimer()
         {
             this.timer_Tick(null!, null!);
@@ -86,15 +93,26 @@ namespace FutureWorldStore.Views
             this.grvTab = this.grvDienThoai;
             this.loadDienThoai();
         }
+           
+
+
         private void loadDienThoai()
         {
             try
             {
+                // Lấy data hiển thị lên DataGridView
                 dataTable = new DataTable();
                 dataTable.Clear();
                 DataSet ds = dt.Get();
                 dataTable = ds.Tables[0];
                 dgDienThoai.ItemsSource = ds.Tables[0].DefaultView;
+                // Lấy data hiển thị lên Combobox
+                DataSet dataSet = hangDienThoai.GetName();
+                DataTable dtable = dataSet.Tables[0];
+                foreach(DataRow dt in dtable.Rows)
+                {
+                    cbHangDienThoai.Items.Add(dt["idHangDT"].ToString().Trim());
+                }    
             }
             catch (SqlException ex)
             {
@@ -279,8 +297,9 @@ namespace FutureWorldStore.Views
 
         private void addDienThoai()
         {
+
             string idDt = txtIdDienThoai.Text.Trim();
-            string idHDT = txtHangDienThoai.Text.Trim();
+            string idHDT = cbHangDienThoai.SelectionBoxItem.ToString().Trim();
             string nameDT = txtTenDienThoai.Text.Trim();
             string color = txtMauSac.Text.Trim();
             string dungluong = txtDungLuong.Text.Trim();
@@ -308,15 +327,15 @@ namespace FutureWorldStore.Views
         private void addNhapKho()
         {
             string idNhapKho = txtIdNhapKho.Text.Trim();
-            string idNhanVien = txtMaNV.Text.Trim();
-            string idNCC = txtMaNCC.Text.Trim();
+            //string idNhanVien = txtMaNV.Text.Trim();
+            //string idNCC = txtMaNCC.Text.Trim();
             string ngayNhapKho = dpkNgayNK.Text.Trim();
             string soLuong = txtTongSoLuong.Text.Trim();
             string thanhTien = txtTienNhapKho.Text.Trim();
             string status = checkboxStatusNhapKho.IsChecked == true ? "1" : "0";
             try
             {
-                if (nhapKho.Add(idNhapKho, idNhanVien, idNCC, ngayNhapKho, soLuong, thanhTien,status, ref err))
+                if (nhapKho.Add(idNhapKho, " ", " ", ngayNhapKho, soLuong, thanhTien,status, ref err))
                     MessageBox.Show("Thêm thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show(err);
@@ -359,7 +378,7 @@ namespace FutureWorldStore.Views
         private void SearchDienThoai()
         {
             string idDt = txtIdDienThoai.Text.Trim();
-            string idHDT = txtHangDienThoai.Text.Trim();
+            string idHDT = cbHangDienThoai.SelectionBoxItem.ToString().Trim();
             string nameDT = txtTenDienThoai.Text.Trim();
             string color = txtMauSac.Text.Trim();
             string dungluong = txtDungLuong.Text.Trim();
@@ -444,23 +463,21 @@ namespace FutureWorldStore.Views
                 err = ex.Message;
             }
         }
-        private void searchNhanVien()
+
+        private void searchKhachHang()
         {
-            string idNV = txtIdNV.Text.Trim();
-            string tenNV = txtTenNV.Text.Trim();
-            string username = txtTenDangNhap.Text.Trim();
-            string password = txtPassWord.Text.Trim();
-            string sdt = txtsoDTNV.Text.Trim();
-            string email = txtemailNV.Text.Trim();
-            string phanQuyen = txtPhanQuyenNV.Text.Trim();
-            string status = txtStatus.Text.Trim();
+            string idKH = txtIdKH.Text.Trim();
+            string tenKH = txtTenKH.Text.Trim();
+            string soDT = txtSoDTKH.Text.Trim();
+            string diemThuong = txtPoint.Text.Trim();
+
             try
             {
                 dataTable = new DataTable();
                 dataTable.Clear();
-                DataSet ds = nhanVien.Search(idNV, tenNV, username, password, sdt, email, phanQuyen, status, ref err);
+                DataSet ds = khachHang.Search(idKH, tenKH, soDT, diemThuong, ref err);
                 dataTable = ds.Tables[0];
-                dgNhanVien.ItemsSource = ds.Tables[0].DefaultView;
+                dgKhachHang.ItemsSource = ds.Tables[0].DefaultView;
             }
             catch (Exception ex)
             {
@@ -481,8 +498,8 @@ namespace FutureWorldStore.Views
         }
         private void EditDienThoai()
         {
-            string idDt = txtIdDienThoai.Text.Trim(); 
-            string idHDT = txtHangDienThoai.Text.Trim();
+            string idDt = txtIdDienThoai.Text.Trim();
+            string idHDT = cbHangDienThoai.Text.Trim();
             string nameDT = txtTenDienThoai.Text.Trim();
             string color = txtMauSac.Text.Trim();
             string dungluong = txtDungLuong.Text.Trim();
@@ -564,12 +581,12 @@ namespace FutureWorldStore.Views
             string idKH = txtIdKH.Text.Trim();
             string tenKH = txtTenKH.Text.Trim();
             string sdtKH = txtSoDTKH.Text.Trim();
-            //string diemThuong = txtEmailNCC.Text.Trim();
+            string diemThuong = txtEmailNCC.Text.Trim();
             //string diachiNCC = txtDiaChiNCC.Text.Trim();
             //string status = txtStatusKH.Text.Trim();
             try
             {
-                if (khachHang.Update(idKH, tenKH, sdtKH, ref err))
+                if (khachHang.Update(idKH, tenKH, sdtKH, diemThuong,ref err))
                     MessageBox.Show("Sửa thành công!", "Khách Hàng", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show(err);
@@ -618,7 +635,7 @@ namespace FutureWorldStore.Views
         private void ClearDienThoai()
         {
             txtIdDienThoai.Clear();
-            txtHangDienThoai.Clear();
+            cbHangDienThoai.SelectedIndex = 0;
             txtTenDienThoai.Clear();
             txtMauSac.Clear();
             txtDungLuong.Clear();
@@ -670,7 +687,9 @@ namespace FutureWorldStore.Views
         {
             txtIdKH.Clear();
             txtTenKH.Clear();
-            statuss.Focusable = false;
+            txtSoDTKH.Clear();
+            txtPoint.Clear();
+            //statuss.Focusable = false;
         }
         private void DeleteDienThoai()
         {
@@ -964,8 +983,8 @@ namespace FutureWorldStore.Views
                 this.searchNhaCungCap();
             if (grvNhapKho.Visibility == Visibility.Visible)
                 this.searchNhapKho();
-            if (grvNhanVien.Visibility == Visibility.Visible)
-                this.searchNhanVien();
+            if (grvKhachHang.Visibility == Visibility.Visible)
+                this.searchKhachHang();
         }
 
         #endregion
@@ -975,10 +994,14 @@ namespace FutureWorldStore.Views
         {
             try
             {
+                
+
+
                 DataRow row = (dgDienThoai.SelectedItem as DataRowView)?.Row!;
                 if (row != null)
                 {
-                    txtHangDienThoai.Text = row["idHangDT"].ToString()!.Trim();
+
+                    cbHangDienThoai.Text = row["idHangDT"].ToString()!.Trim();
                     txtTenDienThoai.Text = row["tenDienThoai"].ToString()!.Trim();
                     txtMauSac.Text = row["mauSac"].ToString()!.Trim();
                     txtDungLuong.Text = row["dungLuong"].ToString()!.Trim();
@@ -1072,7 +1095,14 @@ namespace FutureWorldStore.Views
                 MessageBox.Show(ex.Message);
             }
         }
+
+
         #endregion
+
+        private void cbHangDienThoai_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
 
         private void dgNhanVien_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
@@ -1089,6 +1119,7 @@ namespace FutureWorldStore.Views
                     txtemailNV.Text = row["email"].ToString()!.Trim();
                     txtPhanQuyenNV.Text = row["phanQuyen"].ToString()!.Trim();
                     txtStatus.Text = row["status"].ToString()!.Trim();
+
                 }
             }
             catch (Exception ex)
@@ -1097,7 +1128,9 @@ namespace FutureWorldStore.Views
             }
         }
 
+        private void dgNhapKho_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            //cbxIdNV.ItemsSource = dgNhapKho.SelectedCells;
+        }
     }
-
-
 }

@@ -12,8 +12,8 @@ namespace FutureWorldStore.Models
     class DBMain
     {
 
-        string ConnStr = @"Data Source=DESKTOP-6B6U3O1;Initial Catalog=PMBanDienThoai;Integrated Security=True";
-        //String ConnStr = "Data Source=DESKTOP-2IK0A0H\\SQLEXPRESS;Initial Catalog=Library_Manager;Integrated Security=True";
+        //string ConnStr = @"Data Source=DESKTOP-6B6U3O1;Initial Catalog=PMBanDienThoai;Integrated Security=True";
+        String ConnStr = "Data Source=DESKTOP-2IK0A0H\\SQLEXPRESS;Initial Catalog=Library_Manager;Integrated Security=True";
        
         //string ConnStr = @"Data Source=QUANGHUY;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123";
         //string ConnStr = @"Data Source=DESKTOP-FTESQMM;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123456";
