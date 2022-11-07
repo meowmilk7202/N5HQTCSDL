@@ -1096,6 +1096,12 @@
                     <!--KhuyenMai-->
 
                     <!--Hãng điện thoại-->
+                    <ComboBox x:Name="cbxIdNV" HorizontalAlignment="Left" Margin="160,55,0,0" VerticalAlignment="Top" Width="236" >
+                        <ComboBox.ContextMenu>
+                            <ContextMenu/>
+                        </ComboBox.ContextMenu>
+                    </ComboBox>
+                    <!--Hãng điện thoại-->
                     <Label 
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left" 
@@ -1137,28 +1143,6 @@
                         Margin="16,48,0,0"
                         Content="Mã Nhân Viên"/>
 
-                    <TextBox
-                        x:Name="txtMaNV"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,48,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-
 
 
                     <!--Màu Sắc-->
@@ -1170,28 +1154,6 @@
                         FontWeight="DemiBold"
                         Margin="16,80,0,0"
                         Content="Nhà Cung Cấp"/>
-
-                    <TextBox
-                        x:Name="txtMaNCC"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,80,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
 
@@ -1259,10 +1221,11 @@
                             </Style>
                         </TextBox.Resources>
                     </TextBox>
+                    <ComboBox x:Name="cbxIdNCC" HorizontalAlignment="Left" Margin="160,83,0,0" VerticalAlignment="Top" Width="236"/>
 
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgNhapKho_SelectedCellsChanged"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdNCC1"
@@ -1576,7 +1539,7 @@
                     </TextBox>
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhanVien" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgNhanVien" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgNhanVien_SelectedCellsChanged"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdDienThoai1"

@@ -23,7 +23,7 @@ namespace FutureWorldStore.Controls
 
         public bool Add(string idKH, string tenKH, string sdt, ref string err)
         {
-            string sqlString = $"exec sp_ReviseKhachHang '{idKH}',N'{tenKH}','{sdt}'";
+            string sqlString = $"exec sp_ReviseKhachHang '{idKH}',N'{tenKH}','{sdt}','{0}'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool Update(string idKH, string tenKH, string sdt, ref string err)
@@ -33,7 +33,7 @@ namespace FutureWorldStore.Controls
         }
         public bool Delete(string idKH, ref string err)
         {
-            string sqlString = $"exec sp_ReviseKhachHang '{idKH}','','','','Delete'";
+            string sqlString = $"exec sp_deleteKhachHang '{idKH}'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public DataSet Search(string idKH, string tenKH, string sdt, string status, ref string err)

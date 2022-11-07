@@ -316,15 +316,15 @@ namespace FutureWorldStore.Views
         private void addNhapKho()
         {
             string idNhapKho = txtIdNhapKho.Text.Trim();
-            string idNhanVien = txtMaNV.Text.Trim();
-            string idNCC = txtMaNCC.Text.Trim();
+            //string idNhanVien = txtMaNV.Text.Trim();
+            //string idNCC = txtMaNCC.Text.Trim();
             string ngayNhapKho = dpkNgayNK.Text.Trim();
             string soLuong = txtTongSoLuong.Text.Trim();
             string thanhTien = txtTienNhapKho.Text.Trim();
             string status = checkboxStatusNhapKho.IsChecked == true ? "1" : "0";
             try
             {
-                if (nhapKho.Add(idNhapKho, idNhanVien, idNCC, ngayNhapKho, soLuong, thanhTien,status, ref err))
+                if (nhapKho.Add(idNhapKho, " ", " ", ngayNhapKho, soLuong, thanhTien,status, ref err))
                     MessageBox.Show("Thêm thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show(err);
@@ -600,7 +600,9 @@ namespace FutureWorldStore.Views
         {
             txtIdKH.Clear();
             txtTenKH.Clear();
-            statuss.Focusable = false;
+            txtSoDTKH.Clear();
+            txtPoint.Clear();
+            //statuss.Focusable = false;
         }
         private void DeleteDienThoai()
         {
@@ -975,9 +977,37 @@ namespace FutureWorldStore.Views
                 MessageBox.Show(ex.Message);
             }
         }
+
         #endregion
 
+        private void dgNhanVien_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            try
+            {
+                DataRow row = (dgNhanVien.SelectedItem as DataRowView)?.Row!;
+                if (row != null)
+                {
+                    txtIdNV.Text = row["MaNhanVien"].ToString()!.Trim();
+                    txtTenNV.Text = row["TenNV"].ToString()!.Trim();
+                    txtTenDangNhap.Text = row["username"].ToString()!.Trim();
+                    txtPassWord.Text = row["password"].ToString()!.Trim();
+                    txtsoDTNV.Text = row["SoDienThoai"].ToString()!.Trim();
+                    txtemailNV.Text = row["email"].ToString()!.Trim();
+                    txtPhanQuyenNV.Text = row["phanQuyen"].ToString()!.Trim();
+                    txtStatus.Text = row["status"].ToString()!.Trim();
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgNhapKho_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            cbxIdNV.ItemsSource = dgNhapKho.SelectedCells;
+        }
     }
 
 
