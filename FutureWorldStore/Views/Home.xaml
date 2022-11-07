@@ -1238,7 +1238,7 @@
 
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgNhapKho_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgNhapKho" Margin="0,332,1,0" Background="#FFFDFDFD" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdNCC1"

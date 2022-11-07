@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FutureWorldStore.Controls;
+using Library_Manager.BS_Layer;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Data;
 using FutureWorldStore.Controls;
@@ -22,7 +18,7 @@ namespace FutureWorldStore.Views
     /// <summary>
     /// Interaction logic for Home.xaml
     /// </summary>
-    
+
     public partial class Home : Window
     {
 
@@ -354,6 +350,31 @@ namespace FutureWorldStore.Views
                 err = ex.Message;
             }
         }
+        private void addNhanVien()
+        {
+            string idNV = txtIdNV.Text.Trim();
+            string tenNV = txtTenNV.Text.Trim();
+            string username = txtTenDangNhap.Text.Trim();
+            string password = txtPassWord.Text.Trim();
+            string sdt = txtsoDTNV.Text.Trim();
+            string email = txtemailNV.Text.Trim();
+            string phanQuyen = txtPhanQuyenNV.Text.Trim();
+            string status = txtStatus.Text.Trim();
+
+            try
+            {
+                if (nhanVien.Add(idNV, tenNV, username, password, sdt, email, phanQuyen, status, ref err))
+                    MessageBox.Show("Thêm thành công!", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show(err);
+                // Hiển thị lại view ncc
+                loadNhanVien();
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+        }
         #endregion
 
         #region Search
@@ -586,7 +607,26 @@ namespace FutureWorldStore.Views
         }
         private void EditNhanVien()
         {
-
+            string idNV = txtIdNV.Text.Trim();
+            string tenNV = txtTenNV.Text.Trim();
+            string username = txtTenDangNhap.Text.Trim();
+            string password = txtPassWord.Text.Trim();
+            string sdt = txtsoDTNV.Text.Trim();
+            string email = txtemailNV.Text.Trim();
+            string phanQuyen = txtPhanQuyenNV.Text.Trim();
+            string status = txtStatus.Text.Trim();
+            try
+            {
+                if (nhanVien.Update(idNV, tenNV, username, password, sdt, email, phanQuyen, status, ref err))
+                  MessageBox.Show("Sửa thành công!", "Nhân viên", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show(err);
+                loadNhanVien();
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
         }
         private void EditThongKe()
         {
@@ -630,6 +670,17 @@ namespace FutureWorldStore.Views
             txtEmailNCC.Clear();
             txtDiaChiNCC.Clear();
             txtStatusNCC.Clear();
+        }
+        private void ClearNhanVien()
+        {
+            txtIdNV.Clear();
+            txtTenNV.Clear();
+            txtTenDangNhap.Clear();
+            txtPassWord.Clear();
+            txtsoDTNV.Clear();
+            txtemailNV.Clear();
+            txtPhanQuyenNV.Clear();
+            txtStatus.Clear();
         }
 
 
@@ -737,6 +788,24 @@ namespace FutureWorldStore.Views
                 err = ex.Message;
             }
         }
+        private void DeleteNhanVien()
+        {
+            string idNV = txtIdNV.Text.Trim();
+            try
+            {
+                if (nhanVien.Delete(idNV, ref err))
+                {
+                    MessageBox.Show("Xóa thành công!", "Nhân viên", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                    MessageBox.Show(err);
+                loadNhanVien();
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+            }
+        }
         #endregion
 
         #region Btn
@@ -822,7 +891,8 @@ namespace FutureWorldStore.Views
 
             if (grvKhachHang.Visibility == Visibility.Visible)
                 addKhachHang();
-
+            if (grvNhanVien.Visibility == Visibility.Visible)
+                addNhanVien();
         }
         private void btnReload_Click(object sender, RoutedEventArgs e)
         {
@@ -863,10 +933,13 @@ namespace FutureWorldStore.Views
                 this.loadNhanVien();
             if (grvKhachHang.Visibility == Visibility.Visible)
                 this.EditKhachHang();
+            if (grvNhanVien.Visibility == Visibility.Visible)
+                this.EditNhanVien();
             if (grvThongKeDT.Visibility == Visibility.Visible)
                 this.loadThongKe();
             if (grvHoaDon.Visibility == Visibility.Visible)
                 this.loadHoaDon();
+
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -883,7 +956,8 @@ namespace FutureWorldStore.Views
 
             if (grvKhachHang.Visibility == Visibility.Visible)
                 DeleteKhachHang();
-
+            if (grvNhanVien.Visibility == Visibility.Visible)
+                DeleteNhanVien();
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
@@ -898,6 +972,8 @@ namespace FutureWorldStore.Views
                 this.ClearNhapKho();
             if (grvKhachHang.Visibility == Visibility.Visible)
                 this.ClearKhachHang();
+            if (grvNhanVien.Visibility == Visibility.Visible)
+                this.ClearNhanVien();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
