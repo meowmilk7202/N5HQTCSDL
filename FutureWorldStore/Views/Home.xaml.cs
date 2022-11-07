@@ -16,7 +16,7 @@ using System.Data;
 using FutureWorldStore.Controls;
 using System.Data.SqlClient;
 using Library_Manager.BS_Layer;
-
+using System.Reflection;
 namespace FutureWorldStore.Views
 {
     /// <summary>
@@ -77,8 +77,11 @@ namespace FutureWorldStore.Views
         private KhachHang khachHang = new KhachHang();
         //private Nha nhaCungCap = new NhaCungCap();
 
+    
 
         #region Load
+
+
         private void loadTimer()
         {
             this.timer_Tick(null!, null!);
@@ -94,15 +97,26 @@ namespace FutureWorldStore.Views
             this.grvTab = this.grvDienThoai;
             this.loadDienThoai();
         }
+           
+
+
         private void loadDienThoai()
         {
             try
             {
+                // Lấy data hiển thị lên DataGridView
                 dataTable = new DataTable();
                 dataTable.Clear();
                 DataSet ds = dt.Get();
                 dataTable = ds.Tables[0];
                 dgDienThoai.ItemsSource = ds.Tables[0].DefaultView;
+                // Lấy data hiển thị lên Combobox
+                DataSet dataSet = hangDienThoai.GetName();
+                DataTable dtable = dataSet.Tables[0];
+                foreach(DataRow dt in dtable.Rows)
+                {
+                    cbHangDienThoai.Items.Add(dt["idHangDT"].ToString().Trim());
+                }    
             }
             catch (SqlException ex)
             {
@@ -287,8 +301,9 @@ namespace FutureWorldStore.Views
 
         private void addDienThoai()
         {
+
             string idDt = txtIdDienThoai.Text.Trim();
-            string idHDT = txtHangDienThoai.Text.Trim();
+            string idHDT = cbHangDienThoai.SelectionBoxItem.ToString().Trim();
             string nameDT = txtTenDienThoai.Text.Trim();
             string color = txtMauSac.Text.Trim();
             string dungluong = txtDungLuong.Text.Trim();
@@ -342,7 +357,7 @@ namespace FutureWorldStore.Views
         private void SearchDienThoai()
         {
             string idDt = txtIdDienThoai.Text.Trim();
-            string idHDT = txtHangDienThoai.Text.Trim();
+            string idHDT = cbHangDienThoai.SelectionBoxItem.ToString().Trim();
             string nameDT = txtTenDienThoai.Text.Trim();
             string color = txtMauSac.Text.Trim();
             string dungluong = txtDungLuong.Text.Trim();
@@ -441,8 +456,8 @@ namespace FutureWorldStore.Views
         }
         private void EditDienThoai()
         {
-            string idDt = txtIdDienThoai.Text.Trim(); 
-            string idHDT = txtHangDienThoai.Text.Trim();
+            string idDt = txtIdDienThoai.Text.Trim();
+            string idHDT = cbHangDienThoai.Text.Trim();
             string nameDT = txtTenDienThoai.Text.Trim();
             string color = txtMauSac.Text.Trim();
             string dungluong = txtDungLuong.Text.Trim();
@@ -559,7 +574,7 @@ namespace FutureWorldStore.Views
         private void ClearDienThoai()
         {
             txtIdDienThoai.Clear();
-            txtHangDienThoai.Clear();
+            cbHangDienThoai.SelectedIndex = 0;
             txtTenDienThoai.Clear();
             txtMauSac.Clear();
             txtDungLuong.Clear();
@@ -878,10 +893,14 @@ namespace FutureWorldStore.Views
         {
             try
             {
+                
+
+
                 DataRow row = (dgDienThoai.SelectedItem as DataRowView)?.Row!;
                 if (row != null)
                 {
-                    txtHangDienThoai.Text = row["idHangDT"].ToString()!.Trim();
+
+                    cbHangDienThoai.Text = row["idHangDT"].ToString()!.Trim();
                     txtTenDienThoai.Text = row["tenDienThoai"].ToString()!.Trim();
                     txtMauSac.Text = row["mauSac"].ToString()!.Trim();
                     txtDungLuong.Text = row["dungLuong"].ToString()!.Trim();
@@ -975,9 +994,14 @@ namespace FutureWorldStore.Views
                 MessageBox.Show(ex.Message);
             }
         }
+
+
         #endregion
 
+        private void cbHangDienThoai_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 
 

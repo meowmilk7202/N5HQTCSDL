@@ -437,7 +437,7 @@
                 <!--tab help-->
 
 
-                <Grid x:Name="grvDienThoai" Visibility="Hidden" >
+                <Grid x:Name="grvDienThoai" Visibility="Visible" >
 
                     <Label 
                         VerticalAlignment="Top"
@@ -448,7 +448,7 @@
                         Margin="16,16,0,0"
                         Content="Hãng điện thoại"/>
 
-                    <TextBox
+                    <!--<TextBox
                         x:Name="txtHangDienThoai"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
@@ -467,8 +467,21 @@
                                 <Setter Property="Padding" Value="16,0" />
                             </Style>
                         </TextBox.Resources>
-                    </TextBox>
-
+                    </TextBox>-->
+                    <ComboBox
+                        x:Name="cbHangDienThoai"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="240"
+                        Height="24"
+                        Margin="160,16,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"                        
+                        Foreground="#4a4a4a" SelectionChanged="cbHangDienThoai_SelectionChanged"
+                    />
+                    
 
                     <!--Tên Dien Thoai-->
                     <Label 
@@ -1610,7 +1623,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvKhachHang" Visibility="Visible">
+                <Grid x:Name="grvKhachHang" Visibility="Hidden">
 
                     <!--Hãng điện thoại-->
 
