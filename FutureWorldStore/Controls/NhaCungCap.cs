@@ -12,9 +12,13 @@ namespace FutureWorldStore.Controls
     {
         DBMain db = null!;
         private string view = " v_infNhaCungCap";
-        public NhaCungCap()
+       /* public NhaCungCap()
         {
             db = new DBMain();
+        }*/
+        public NhaCungCap(string role)
+        {
+            db = new DBMain(role);
         }
         public DataSet Get()
         {

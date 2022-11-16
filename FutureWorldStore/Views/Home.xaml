@@ -8,16 +8,19 @@
         xmlns:local="clr-namespace:FutureWorldStore.Views"
         mc:Ignorable="d"
         Height="720" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True"
-        Icon="/Views/IconWindows.jpg">
-    <Grid Background="#fefefe">
+        Icon="../Images/IconWindows.jpg" Loaded="frmDangNhap_Loaded">
+    <Grid Loaded="Grid_Loaded">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
         <!--navigation left-->
-        <Border 
+        <Border x:Name="GDTren_Border" 
             HorizontalAlignment="Left"
             BorderThickness="0,0,1,0"
             BorderBrush="#ccc"
             Margin="0,160,0,0">
             <Border.Background>
-                <ImageBrush ImageSource="BoderLL_DienThoai.png"/>
+                <ImageBrush ImageSource="../Images/L_Hoadon.png"/>
             </Border.Background>
             <StackPanel 
                 x:Name="tab"
@@ -37,7 +40,7 @@
                             Height="46.8"
                             BorderThickness="0"
                             Content="Điện Thoại"
-                            Cursor="Hand" Click="btnDienThoai_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20,0,20,0" Background="{x:Null}"
+                            Cursor="Hand" Click="btnDienThoai_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="25,0,21,0" Background="{x:Null}"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -73,7 +76,7 @@
                             Height="46.8"
                             BorderThickness="0"
                             Content="Hãng Điện Thoại"
-                            Cursor="Hand" Click="btnHangDienThoai_Click" HorizontalAlignment="Stretch" Background="{x:Null}" Width="200" Margin="20,0,20,0"
+                            Cursor="Hand" Click="btnHangDienThoai_Click" HorizontalAlignment="Stretch" Background="{x:Null}" Width="200" Margin="25,0,21,0" RenderTransformOrigin="0.5,0.5"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -93,6 +96,14 @@
                                 </Setter>
                             </Style>
                         </Button.Resources>
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="1.174"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="-0.48"/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
                     </Button>
                 </Border>
 
@@ -110,7 +121,7 @@
                             Height="46.8"
                             BorderThickness="0"
                             Content="Nhà Cung Cấp"
-                            Cursor="Hand" Click="btnNhaCungCap_Click" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="{x:Null}" Margin="20,0,20,0"
+                            Cursor="Hand" Click="btnNhaCungCap_Click" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="{x:Null}" Margin="25,0,21,0"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -147,7 +158,7 @@
                             Height="46.8"
                             BorderThickness="0"
                             Content="Nhập Kho"
-                            Cursor="Hand" Click="btnNhapKho_Click" HorizontalAlignment="Stretch" Background="{x:Null}" Margin="20,0,20,0"
+                            Cursor="Hand" Click="btnNhapKho_Click" HorizontalAlignment="Stretch" Background="{x:Null}" Margin="25,0,21,0"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -184,7 +195,7 @@
                             Height="46.8"
                             BorderThickness="0"
                             Content="In Hóa Đơn"
-                            Cursor="Hand" Click="btnInHoaDon_Click" HorizontalAlignment="Stretch" Background="{x:Null}" Margin="20,0,20,0"
+                            Cursor="Hand" Click="btnInHoaDon_Click" HorizontalAlignment="Stretch" Background="{x:Null}" Margin="25,0,19,0"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -221,7 +232,7 @@
                             Height="46.8"
                             BorderThickness="0"
                             Content="Hóa Đơn"
-                            Cursor="Hand" Click="btnHoaDon_Click" HorizontalAlignment="Stretch" Background="{x:Null}" Margin="20,0,20,0"
+                            Cursor="Hand" Click="btnHoaDon_Click" HorizontalAlignment="Stretch" Background="{x:Null}" Margin="25,0,21,0"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -261,7 +272,7 @@
                             Height="46.8"
                             BorderThickness="0"
                             Content="Nhân viên"
-                            Cursor="Hand" HorizontalAlignment="Stretch" Background="{x:Null}" Margin="20,0,20,0" Click="btnNhanVien_Click"
+                            Cursor="Hand" HorizontalAlignment="Stretch" Background="{x:Null}" Margin="25,0,21,0" Click="btnNhanVien_Click"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -295,10 +306,10 @@
                             Foreground="#4a4a4a"
                             FontWeight="DemiBold"
                             FontSize="20"
-                            Height="47"
+                            Height="46.8"
                             BorderThickness="0"
                             Content="Khách Hàng"
-                            Cursor="Hand" Click="btnKhachHang_Click" Background="{x:Null}" Margin="0,0,20,0" HorizontalAlignment="Right" Width="200"
+                            Cursor="Hand" Click="btnKhachHang_Click" Background="{x:Null}" Margin="25,0,21,0" HorizontalAlignment="Right" Width="193.6"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -330,10 +341,10 @@
                             Foreground="#4a4a4a"
                             FontWeight="DemiBold"
                             FontSize="20"
-                            Height="47"
+                            Height="46.8"
                             BorderThickness="0"
                             Content="Thống Kê"
-                            Cursor="Hand" Click="btnThongKe_Click" Background="{x:Null}" Margin="0,0,20,0" HorizontalAlignment="Right" Width="200"
+                            Cursor="Hand" Click="btnThongKe_Click" Background="{x:Null}" Margin="25,0,21,0" HorizontalAlignment="Right" Width="193.6"
                             >
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
@@ -361,14 +372,17 @@
 
 
         <!--navigation top-->
-        <Border 
+        <Border x:Name="GDHeader_Border" 
             VerticalAlignment="Top"
             BorderThickness="0,0,0,1"
             BorderBrush="#ccc">
             <Border.Background>
-                <ImageBrush ImageSource="header2_DienThoai.png"/>
+                <ImageBrush ImageSource="../Images/header_inhoadon.png"/>
             </Border.Background>
             <Grid x:Name="TB">
+                <Grid.Background>
+                    <ImageBrush/>
+                </Grid.Background>
 
                 <!--background-->
                 <Canvas/>
@@ -385,8 +399,8 @@
                             Foreground="#4a4a4a"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            Margin="64,32,0,0"
-                            Content="20:00"/>
+                            Margin="66,32,0,0"
+                            Content="00:00"/>
 
                         <Label
                             x:Name="lbDate"
@@ -395,8 +409,17 @@
                             Foreground="#4a4a4a"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            Margin="49,84,0,0"
-                            Content="Thứ 5, 16/06/2022"/>
+                            Margin="77,109,0,-14.6"
+                            Content="01/01/2023" Height="64" Width="85"/>
+                        <Label
+                            x:Name="lbDate_N"
+                            FontSize="15"
+                            FontWeight="DemiBold"
+                            Foreground="#4a4a4a"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="76,84,0,0"
+                            Content="Thứ 5" Height="37" Width="113"/>
                     </Grid>
 
                     <!--header-->
@@ -406,17 +429,15 @@
             </Grid>
         </Border>
         <!--content-->
-        <Border x:Name="GDBorder"
+        <Border x:Name="GDbody_Border"
             Margin="242,161,-2,-1" RenderTransformOrigin="0.498,0.476">
             <Border.Background>
-                <ImageBrush/>
+                <ImageBrush ImageSource="../Images/Body_inhoadon.png"/>
             </Border.Background>
 
 
-            <Grid Height="560" VerticalAlignment="Bottom">
-                <Grid.Background>
-                    <ImageBrush ImageSource="Body3_DienThoai.png"/>
-                </Grid.Background>
+            <Grid Height="560" VerticalAlignment="Center">
+
                 <!--Điện Thoại-->
 
                 <!--tab author-->
@@ -437,7 +458,7 @@
                 <!--tab help-->
 
 
-                <Grid x:Name="grvDienThoai" Visibility="Hidden" >
+                <Grid x:Name="grvDienThoai" Visibility="Visible" >
 
                     <Label 
                         VerticalAlignment="Top"
@@ -448,7 +469,7 @@
                         Margin="16,16,0,0"
                         Content="Hãng điện thoại"/>
 
-                    <TextBox
+                    <!--<TextBox
                         x:Name="txtHangDienThoai"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
@@ -467,7 +488,20 @@
                                 <Setter Property="Padding" Value="16,0" />
                             </Style>
                         </TextBox.Resources>
-                    </TextBox>
+                    </TextBox>-->
+                    <ComboBox
+                        x:Name="cbHangDienThoai"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="240"
+                        Height="24"
+                        Margin="160,16,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"                        
+                        Foreground="#4a4a4a" SelectionChanged="cbHangDienThoai_SelectionChanged"
+                    />
 
 
                     <!--Tên Dien Thoai-->
@@ -521,12 +555,11 @@
                         Width="240"
                         Height="24"
                         Margin="160,80,0,0"
-                        Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
                         FontSize="16"
                         
-                        Foreground="#4a4a4a"
+                        Foreground="#4a4a4a" Background="#FFEEEEEE"
                         >
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -1096,6 +1129,12 @@
                     <!--KhuyenMai-->
 
                     <!--Hãng điện thoại-->
+                    <ComboBox x:Name="cbxIdNV" HorizontalAlignment="Left" Margin="160,55,0,0" VerticalAlignment="Top" Width="236" SelectionChanged="cbxIdNV_SelectionChanged" >
+                        <ComboBox.ContextMenu>
+                            <ContextMenu/>
+                        </ComboBox.ContextMenu>
+                    </ComboBox>
+                    <!--Hãng điện thoại-->
                     <Label 
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left" 
@@ -1137,28 +1176,6 @@
                         Margin="16,48,0,0"
                         Content="Mã Nhân Viên"/>
 
-                    <TextBox
-                        x:Name="txtMaNV"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,48,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-
 
 
                     <!--Màu Sắc-->
@@ -1170,28 +1187,6 @@
                         FontWeight="DemiBold"
                         Margin="16,80,0,0"
                         Content="Nhà Cung Cấp"/>
-
-                    <TextBox
-                        x:Name="txtMaNCC"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,80,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
 
@@ -1259,6 +1254,7 @@
                             </Style>
                         </TextBox.Resources>
                     </TextBox>
+                    <ComboBox x:Name="cbxIdNCC" HorizontalAlignment="Left" Margin="160,83,0,0" VerticalAlignment="Top" Width="236"/>
 
 
                     <!--Data-->
@@ -1317,7 +1313,7 @@
                         Foreground="#4a4a4a"
                         FontSize="16"
                         FontWeight="DemiBold"
-                        Margin="16,16,0,0"
+                        Margin="34,16,0,0"
                         Content="Mã Nhân Viên"/>
 
                     <TextBox
@@ -1326,7 +1322,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="160,16,0,0"
+                        Margin="178,16,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -1349,7 +1345,7 @@
                         Foreground="#4a4a4a"
                         FontSize="16"
                         FontWeight="DemiBold"
-                        Margin="16,48,0,0"
+                        Margin="34,48,0,0"
                         Content="Tên Nhân Viên"/>
 
                     <TextBox
@@ -1358,7 +1354,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="160,48,0,0"
+                        Margin="178,48,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -1383,7 +1379,7 @@
                         Foreground="#4a4a4a"
                         FontSize="16"
                         FontWeight="DemiBold"
-                        Margin="16,80,0,0"
+                        Margin="34,80,0,0"
                         Content="Tên Đăng Nhập"/>
 
                     <TextBox
@@ -1392,7 +1388,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="160,80,0,0"
+                        Margin="178,80,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -1417,7 +1413,7 @@
                         Foreground="#4a4a4a"
                         FontSize="16"
                         FontWeight="DemiBold"
-                        Margin="16,112,0,0"
+                        Margin="34,112,0,0"
                         Content="Mật Khẩu"/>
 
                     <TextBox
@@ -1426,7 +1422,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="160,112,0,0"
+                        Margin="178,112,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -1450,7 +1446,7 @@
                         Foreground="#4a4a4a"
                         FontSize="16"
                         FontWeight="DemiBold"
-                        Margin="16,144,0,0"
+                        Margin="34,144,0,0"
                         Content="Số Điện Thoại"/>
 
                     <TextBox
@@ -1459,7 +1455,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="160,144,0,0"
+                        Margin="178,144,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -1483,7 +1479,7 @@
                         Foreground="#4a4a4a"
                         FontSize="16"
                         FontWeight="DemiBold"
-                        Margin="16,176,0,0"
+                        Margin="34,176,0,0"
                         Content="Email"/>
 
                     <TextBox
@@ -1492,7 +1488,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="160,176,0,0"
+                        Margin="178,176,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -1517,7 +1513,7 @@
                         Foreground="#4a4a4a"
                         FontSize="16"
                         FontWeight="DemiBold"
-                        Margin="16,208,0,0"
+                        Margin="34,208,0,0"
                         Content="Vai Trò"/>
 
                     <TextBox
@@ -1526,7 +1522,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="160,208,0,0"
+                        Margin="178,208,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -1550,7 +1546,7 @@
                         Foreground="#4a4a4a"
                         FontSize="16"
                         FontWeight="DemiBold"
-                        Margin="16,240,0,0"
+                        Margin="34,240,0,0"
                         Content="Trạng Thái"/>
 
                     <TextBox
@@ -1559,7 +1555,7 @@
                         HorizontalAlignment="Left"
                         Width="240"
                         Height="24"
-                        Margin="160,240,0,0"
+                        Margin="178,240,0,0"
                         Background="#eee"
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
@@ -1576,7 +1572,7 @@
                     </TextBox>
 
                     <!--Data-->
-                    <DataGrid x:Name="dgNhanVien" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+                    <DataGrid x:Name="dgNhanVien" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgNhanVien_SelectedCellsChanged"/>
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdDienThoai1"
@@ -1610,7 +1606,7 @@
                         Content="Mã điện thoại"/>
 
                 </Grid>
-                <Grid x:Name="grvKhachHang" Visibility="Visible">
+                <Grid x:Name="grvKhachHang" Visibility="Hidden">
 
                     <!--Hãng điện thoại-->
 
@@ -1799,173 +1795,37 @@
                     <!--KhuyenMai-->
 
                     <!--Hãng điện thoại-->
-                    <Label 
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left" 
-                        Foreground="#4a4a4a"
-                        FontSize="16"
-                        FontWeight="DemiBold"
-                        Margin="16,16,0,0"
-                        Content="Mã Nhà Cung Cấp"/>
-
-                    <TextBox
-                        x:Name="txtidNCC_2"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,16,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
                     <!--Tên Dien Thoai-->
-                    <Label 
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left" 
-                        Foreground="#4a4a4a"
-                        FontSize="16"
-                        FontWeight="DemiBold"
-                        Margin="16,48,0,0"
-                        Content="Tên Nhà Cung Cấp"/>
-
-                    <TextBox
-                        x:Name="txttenNCC_2"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,48,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
 
                     <!--Màu Sắc-->
-                    <Label 
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left" 
-                        Foreground="#4a4a4a"
-                        FontSize="16"
-                        FontWeight="DemiBold"
-                        Margin="16,80,0,0"
-                        Content="Số Điện Thoại"/>
-
-                    <TextBox
-                        x:Name="txtSDT2"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,80,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
 
                     <!--Dung Lượng-->
-                    <Label 
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left" 
-                        Foreground="#4a4a4a"
-                        FontSize="16"
-                        FontWeight="DemiBold"
-                        Margin="16,112,0,0"
-                        Content="Email"/>
-
-                    <TextBox
-                        x:Name="txtEmail2"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,112,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
                     <!--Bộ Nhớ-->
-                    <Label 
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left" 
-                        Foreground="#4a4a4a"
-                        FontSize="16"
-                        FontWeight="DemiBold"
-                        Margin="16,144,0,0"
-                        Content="Địa chỉ"/>
-
-                    <TextBox
-                        x:Name="txtDiaChi2"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,144,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
                     <!--Data-->
-                    <DataGrid x:Name="dgThongKe" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged"/>
+
+
+                    <!--Data-->
+                    <Label Content="Thống kê                         " HorizontalAlignment="Left" Margin="160,22,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Chọn ngày :" HorizontalAlignment="Left" Margin="74,61,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="chkTop1BanChay" Content="Điện thoại bán chạy" HorizontalAlignment="Left" Margin="76,92,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+                    <DatePicker x:Name="dpkDateOfTK" HorizontalAlignment="Left" Margin="160,61,0,0" VerticalAlignment="Top" Width="122"/>
+                    <Button x:Name="btnCheckDate" Content="OK" HorizontalAlignment="Left" Margin="367,260,0,0" VerticalAlignment="Top" Click="btnCheckDate_Click" RenderTransformOrigin="0.3,10.671" Height="33" Width="30"/>
+                    <CheckBox x:Name="chkLoiNhuanNgay" Content="Lợi nhuận" HorizontalAlignment="Left" Margin="74,137,0,0" VerticalAlignment="Top" Width="153"/>
+                    <CheckBox x:Name="chkDTTheoNgay" Content="Điện thoại bán được" HorizontalAlignment="Left" Margin="76,114,0,0" VerticalAlignment="Top"/>
+
+
+                    <!--Data-->
+                    <DataGrid x:Name="dgThongKe" Margin="0,332,1,0" Background="#FFC8F3FB" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged" />
                     <TextBox
                         Visibility="Hidden"
                         x:Name="txtIdNCC3"
@@ -1997,6 +1857,11 @@
                         FontWeight="DemiBold"
                         Margin="18,271,0,0"
                         Content="Mã điện thoại"/>
+                    <ComboBox x:Name="cbxThongKeDTNgay" HorizontalAlignment="Left" Margin="287,61,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxThongKeDTNgay_SelectionChanged" >
+                        <ComboBoxItem Content = "Theo Ngày" />
+                        <ComboBoxItem Content = "Theo Tháng" />
+                        <ComboBoxItem Content = "Theo Năm" />
+                    </ComboBox>
 
                 </Grid>
                 <Grid x:Name="grvHoaDon" Visibility="Hidden">
@@ -2045,28 +1910,6 @@
                         Margin="16,48,0,0"
                         Content="Mã Nhân Viên"/>
 
-                    <TextBox
-                        x:Name="txtIdNvHoaDon"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,48,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-
 
 
                     <!--Màu Sắc-->
@@ -2078,28 +1921,6 @@
                         FontWeight="DemiBold"
                         Margin="16,80,0,0"
                         Content="Mã Khách Hàng"/>
-
-                    <TextBox
-                        x:Name="txtMaKHHoaDon"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Left"
-                        Width="240"
-                        Height="24"
-                        Margin="160,80,0,0"
-                        Background="#eee"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center"
-                        FontSize="16"
-                        
-                        Foreground="#4a4a4a"
-                        >
-                        <TextBox.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="4"/>
-                                <Setter Property="Padding" Value="16,0" />
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
 
 
 
@@ -2318,13 +2139,30 @@
                             </Style>
                         </TextBox.Resources>
                     </TextBox>
+                    <ComboBox x:Name="cbxNhanVien"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="240"
+                        Height="24"
+                        Margin="160,48,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"
+                        
+                        Foreground="#4a4a4a"/>
+                    <ComboBox 
+                        x:Name="cbxKhachHang"
+                        Width="240"
+                        Height="24"
+                        Margin="160,80,560,456"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"
+                        Foreground="#4a4a4a"/>
 
                 </Grid>
-                <Border x:Name="Anhhhh"
-                VerticalAlignment="Top"
-                BorderThickness="0,0,0,1"
-                BorderBrush="#ccc" Margin="458,83,171,0" Height="219">
-                </Border>
 
 
                 <!--tab help-->
@@ -2339,7 +2177,7 @@
                             BorderThickness="0"
                             Content=""
                             Cursor="Hand" HorizontalAlignment="Left"
-                            Margin="896,-5,0,480" Height="85" Click="btnSearch_Click"
+                            Margin="898,0,0,475" Height="85" Click="btnSearch_Click"
                             >
                     <Button.Resources>
                         <Style TargetType="{x:Type Button}">
@@ -2360,7 +2198,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="search_more_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="../Images/search_more_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2392,7 +2230,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="Delete_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="../Images/Delete_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                     <Button.RenderTransform>
                         <TransformGroup>
@@ -2411,7 +2249,7 @@
                             BorderThickness="0"
                             Content=""
                             Cursor="Hand"
-                            Margin="0,-6,306,0" Width="52" VerticalAlignment="Top" Height="85" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Click="btnChange_Click"
+                            Margin="0,-6,321,0" Width="52" VerticalAlignment="Top" Height="85" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Click="btnChange_Click"
                             >
                     <Button.Resources>
                         <Style TargetType="{x:Type Button}">
@@ -2432,7 +2270,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="support_100px.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="../Images/support_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2464,7 +2302,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="plus_+_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="../Images/plus_+_100px.png" Stretch="Uniform" TileMode="None"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2496,7 +2334,7 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="housekeeping_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="../Images/housekeeping_100px.png" Stretch="Uniform" TileMode="None"/>
                     </Button.Background>
                 </Button>
                 <Button 
@@ -2528,7 +2366,470 @@
                         </Style>
                     </Button.Resources>
                     <Button.Background>
-                        <ImageBrush ImageSource="iphone_spinner_100px.png" Stretch="Uniform" TileMode="None"/>
+                        <ImageBrush ImageSource="../Images/iphone_spinner_100px.png" Stretch="Uniform" TileMode="None"/>
+                    </Button.Background>
+                </Button>
+                <Button 
+                    x:Name="btnLogOut"
+                    Foreground="#fefefe"
+                    FontWeight="DemiBold"
+                    FontSize="12"
+                    Width="34"
+                    BorderThickness="0"
+                    Content=""
+                    Cursor="Hand" HorizontalAlignment="Left"
+                    Margin="907,-102,0,588" Click="btnLogOut_Click"
+                            >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="#ccc">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#44a232"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Images/logout.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button 
+                    x:Name="btnChiTietHoaDon"
+                    Foreground="#fefefe"
+                    FontWeight="DemiBold"
+                    FontSize="12"
+                    Width="34"
+                    BorderThickness="0"
+                    Content=""
+                    Cursor="Hand" HorizontalAlignment="Left"
+                    Margin="838,10,0,495" Click="btnInChiTietHoaDon_Click" RenderTransformOrigin="0.5,0.501"
+                     Visibility="Hidden"    >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="#ccc">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#44a232"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <ImageBrush ImageSource="../Images/info_64px.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Grid x:Name="grvChiTietHoaDon" Visibility="Hidden" Margin="14,0,-14,0">
+                    <Grid.Background>
+                        <ImageBrush/>
+                    </Grid.Background>
+
+                    <!--Hãng điện thoại-->
+
+
+                    <!--Tên Dien Thoai-->
+
+
+
+                    <!--Màu Sắc-->
+
+
+
+                    <!--Dung Lượng-->
+
+
+                    <!--Bộ Nhớ-->
+
+
+                    <!--Số Lượng-->
+
+
+
+                    <!--Giá Bán-->
+
+
+                    <!--KhuyenMai-->
+
+                    <!--Hãng điện thoại-->
+                    <Label 
+                        x:Name="lblTKHCTHD"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left" 
+                        Foreground="#4a4a4a"
+                        FontSize="9"
+                        FontWeight="DemiBold"
+                        Margin="299,103,0,0"
+                        Content="Tên khách hàng: Nguyễn Văn A"/>
+
+
+                    <!--Data-->
+                    <Label 
+                        x:Name="lblSdt"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left" 
+                        Foreground="#4a4a4a"
+                        FontSize="9"
+                        FontWeight="DemiBold"
+                        Margin="301,123,0,0"
+                        Content="Số điện thoại: 0381234567"/>
+                    <Grid Margin="280,141,357,188">
+                        <Label 
+                            x:Name="lbTSP"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left" 
+                            Foreground="#4a4a4a"
+                            FontSize="9"
+                            FontWeight="DemiBold"
+                            Content="Tên sản phẩm" Height="31" Width="73"/>
+                        <TextBox FontSize="9" x:Name="txttenDienThoai" HorizontalAlignment="Left" Height="215" Margin="5,22,0,-6" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Background="{x:Null}">
+                            <TextBox.BorderBrush>
+                                <SolidColorBrush Color="#FF2249BD" Opacity="0"/>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <Label 
+                            x:Name="lbMS"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left" 
+                            Foreground="#4a4a4a"
+                            FontSize="9"
+                            FontWeight="DemiBold"
+                            Margin="81,0,0,0"
+                            Content="Màu sắc" Height="31" Width="47"/>
+                        <Label 
+                            x:Name="lbDL"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left" 
+                            Foreground="#4a4a4a"
+                            FontSize="9"
+                            FontWeight="DemiBold"
+                            Margin="122,0,0,0"
+                            Content="Dung lượng" Height="31" Width="59"/>
+                        <Label 
+                            x:Name="lbBN"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left" 
+                            Foreground="#4a4a4a"
+                            FontSize="9"
+                            FontWeight="DemiBold"
+                            Margin="178,0,0,0"
+                            Content="Bộ nhớ" Height="31" Width="40"/>
+                        <Label 
+                            x:Name="lbGia"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left" 
+                            Foreground="#4a4a4a"
+                            FontSize="9"
+                            FontWeight="DemiBold"
+                            Margin="260,0,-21,0"
+                            Content="Giá" Height="31" Width="59"/>
+                        <Label 
+                            x:Name="lbSL"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left" 
+                            Foreground="#4a4a4a"
+                            FontSize="9"
+                            FontWeight="DemiBold"
+                            Margin="220,0,0,0"
+                            Content="SL" Height="31" Width="18"/>
+                        <TextBox  x:Name="txtMS" HorizontalAlignment="Left" Height="215" Margin="86,22,0,-6" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" Background="{x:Null}" FontSize="9" >
+                            <TextBox.BorderBrush>
+                                <SolidColorBrush Color="#FF2249BD" Opacity="0"/>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <TextBox  x:Name="txtDL" HorizontalAlignment="Left" Height="215" Margin="132,22,0,-6" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Background="{x:Null}" FontSize="9" >
+                            <TextBox.BorderBrush>
+                                <SolidColorBrush Color="#FF2249BD" Opacity="0"/>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <TextBox  x:Name="txtBN" HorizontalAlignment="Left" Height="215" Margin="182,22,0,-6" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Background="{x:Null}" FontSize="9" >
+                            <TextBox.BorderBrush>
+                                <SolidColorBrush Color="#FF2249BD" Opacity="0"/>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <TextBox  x:Name="txtSL" HorizontalAlignment="Left" Height="215" Margin="221,22,0,-6" TextWrapping="Wrap" VerticalAlignment="Top" Width="21" Background="{x:Null}" FontSize="9" >
+                            <TextBox.BorderBrush>
+                                <SolidColorBrush Color="#FF2249BD" Opacity="0"/>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                        <TextBox  x:Name="txtGia" HorizontalAlignment="Left" Height="215" Margin="256,22,0,-6" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" Background="{x:Null}" FontSize="9" >
+                            <TextBox.BorderBrush>
+                                <SolidColorBrush Color="#FF2249BD" Opacity="0"/>
+                            </TextBox.BorderBrush>
+                        </TextBox>
+                    </Grid>
+                    <Label 
+                        x:Name="lblNLHD"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left" 
+                        Foreground="#4a4a4a"
+                        FontSize="9"
+                        FontWeight="DemiBold"
+                        Margin="468,83,0,0"
+                        Content="12/11/2022"/>
+                    <Label 
+                        x:Name="lblSum"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left" 
+                        Foreground="#4a4a4a"
+                        FontSize="14"
+                        FontWeight="DemiBold"
+                        Margin="458,405,0,0"
+                        Content="9999999$" Width="87" Height="32"/>
+                    <Label 
+                        x:Name="lblSum_Copy"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left" 
+                        Foreground="#4a4a4a"
+                        FontSize="14"
+                        FontWeight="DemiBold"
+                        Margin="318,404,0,0"
+                        Content="Tổng tiền:" Width="87" Height="32"/>
+                    <Label 
+                        x:Name="lblID"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left" 
+                        Foreground="#4a4a4a"
+                        FontSize="9"
+                        FontWeight="DemiBold"
+                        Margin="300,83,0,0"
+                        Content="Mã hóa đơn:" Width="100"/>
+
+                </Grid>
+                <Grid x:Name="grvInHoaDon" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="39*"/>
+                        <RowDefinition Height="41*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Hãng điện thoại-->
+
+
+                    <!--Số Lượng-->
+
+
+
+                    <!--Giá Bán-->
+
+
+                    <!--KhuyenMai-->
+
+                    <!--Hãng điện thoại-->
+
+
+                    <!--Tên Dien Thoai-->
+
+
+
+                    <!--Màu Sắc-->
+
+
+
+                    <!--Dung Lượng-->
+
+
+                    <!--Bộ Nhớ-->
+
+
+                    <!--Data-->
+
+
+                    <!--Data-->
+
+
+                    <!--Data-->
+                    <DataGrid x:Name="dgDSCTHD" Margin="128,70.2,240,73" Background="#FFFFF9E5" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged" Grid.Row="1" />
+                    <TextBox
+                        Visibility="Hidden"
+                        x:Name="txtIdNCC2"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="240"
+                        Height="24"
+                        Margin="160,272,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"                        
+                        Foreground="#4a4a4a" Grid.RowSpan="2"
+                        >
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="4"/>
+                                <Setter Property="Padding" Value="16,0" />
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Label 
+                        x:Name="lblIdDT7"
+                        Visibility="Hidden"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left" 
+                        Foreground="#4a4a4a"
+                        FontSize="16"
+                        FontWeight="DemiBold"
+                        Margin="18,271,0,0"
+                        Content="Mã điện thoại" Grid.RowSpan="2"/>
+                    <Label Content="Tên Khách Hàng" HorizontalAlignment="Left" Margin="132,117,0,0" VerticalAlignment="Top"/>
+                    <TextBox
+                        x:Name="txtTenKHInHD"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="175"
+                        Height="24"
+                        Margin="234,115,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"
+                        
+                        Foreground="#4a4a4a"
+                        >
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="4"/>
+                                <Setter Property="Padding" Value="16,0" />
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Label Content="Số Điện Thoại" HorizontalAlignment="Left" Margin="130,76,0,0" VerticalAlignment="Top"/>
+                    <TextBox
+                        x:Name="txtSDTInHD"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="233"
+                        Height="24"
+                        Margin="235,74,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"
+                        
+                        Foreground="#4a4a4a" >
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="4"/>
+                                <Setter Property="Padding" Value="16,0" />
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Label Content="Mã Hóa Đơn                            " HorizontalAlignment="Left" Margin="641,161,0,0" VerticalAlignment="Top" Width="106"/>
+                    <TextBox
+                        x:Name="txtIDHoaDon"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="88"
+                        Height="18"
+                        Margin="732,161,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"
+                        
+                        Foreground="#4a4a4a"
+                        >
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="4"/>
+                                <Setter Property="Padding" Value="16,0" />
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <DataGrid x:Name="dgThongTinSearch" Margin="128,199,130,257" Background="White" SelectedCellsChanged="dgDienThoai_SelectedCellsChanged" Grid.RowSpan="2" />
+                    <Label Content="Nhập thông tin điện thoại                            " HorizontalAlignment="Left" Margin="133,158,0,0" VerticalAlignment="Top" Width="153"/>
+                    <TextBox
+                        x:Name="txtSearchDT"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="176"
+                        Height="20"
+                        Margin="292,158,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"
+                        
+                        Foreground="#4a4a4a" SelectionChanged="txtSearchDT_SelectionChanged"
+                        >
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="4"/>
+                                <Setter Property="Padding" Value="16,0" />
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <TextBox
+                        x:Name="txtSoLuongDT"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Width="41"
+                        Height="18"
+                        Margin="555,161,0,0"
+                        Background="#eee"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="16"
+                        
+                        Foreground="#4a4a4a" RenderTransformOrigin="-1.361,0.292"
+                        >
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="4"/>
+                                <Setter Property="Padding" Value="16,0" />
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Label Content="Số lượng" HorizontalAlignment="Left" Margin="492,158,0,0" VerticalAlignment="Top" Width="62"/>
+                    <Label Content="Tổng sản phẩm" HorizontalAlignment="Left" Margin="128,40.2,0,0" VerticalAlignment="Top" Width="153" Grid.Row="1"/>
+                    <Label x:Name="lbltenNV" Content="Tên Nhân Viên" HorizontalAlignment="Left" Margin="128,40,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+                <Button 
+                    x:Name="btnSearchKHInHD"
+                    Foreground="#fefefe"
+                    FontWeight="DemiBold"
+                    FontSize="12"
+                    Width="46"
+                    BorderThickness="0"
+                    Content=""
+                    Cursor="Hand" HorizontalAlignment="Left"
+                    Margin="428,95,0,396" Click="btnSearchKHInHD_Click" RenderTransformOrigin="0.848,0.681"
+                            >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="#ccc">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#44a232"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/search_more_100px.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
             </Grid>

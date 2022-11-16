@@ -13,10 +13,15 @@ namespace Library_Manager.BS_Layer
     {
         DBMain db = null!;
         private string view = " v_infNhapKho";
-        public NhapKho()
+        /*public NhapKho()
         {
             db = new DBMain();
+        }*/
+        public NhapKho(string role)
+        {
+            db = new DBMain(role);
         }
+
         public DataSet Get()
         {
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);

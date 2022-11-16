@@ -11,14 +11,26 @@ namespace FutureWorldStore.Controls
     class HangDienThoai
     {
         DBMain db = null!;
-        public HangDienThoai()
+        /*public HangDienThoai()
         {
             db = new DBMain();
         }
+*/
+        public HangDienThoai(string role)
+        {
+            db = new DBMain(role);
+        }
         private string view = "v_infHangDT";
+
+
         public DataSet Get()
         {
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);
+        }
+
+        public DataSet GetName()
+        {
+            return db.ExecuteQueryDataSet($"select distinct tenHangDT, idHangDT from {view}", CommandType.Text);
         }
         public bool Add(string idHangDT, string tenHangDT,  int status, ref string err)
         {

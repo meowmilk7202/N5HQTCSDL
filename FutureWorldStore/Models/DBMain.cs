@@ -12,12 +12,21 @@ namespace FutureWorldStore.Models
     class DBMain
     {
 
-        string ConnStr = @"Data Source=DESKTOP-FTESQMM;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123456";
-        //String ConnStr = "Data Source=DESKTOP-2IK0A0H\\SQLEXPRESS;Initial Catalog=Library_Manager;Integrated Security=True";
-       
-        //string ConnStr = @"Data Source=QUANGHUY;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123";
-        //string ConnStr = @"Data Source=DESKTOP-FTESQMM;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123456";
+        //string ConnStr = @"Data Source=DESKTOP-6B6U3O1;Initial Catalog=PMBanDienThoai;Integrated Security=True";
+        // String ConnStr = "Data Source=DESKTOP-2IK0A0H\\SQLEXPRESS;Initial Catalog=Library_Manager;Integrated Security=True";
 
+        //string ConnStr = @"Data Source=DESKTOP-AM54MG4\HOANGTOAN;Initial Catalog=PMBanDienThoai04;User ID=sa;Password=123";
+        //string ConnStr = @"Data Source=DESKTOP-AM54MG4\HOANGTOAN;Initial Catalog=PMBanDienThoai;User ID=sa;Password=123";
+        //string ConnStr = @"Data Source=DESKTOP-AM54MG4\HOANGTOAN;Initial Catalog=PMBanDienThoai04;User ID=sa;Password=123";
+        //  string connAdmin = @"Data Source=DESKTOP-AM54MG4\HOANGTOAN;Initial Catalog=PMBanDienThoai04;User ID=admin1;Password=123";
+        // string connSeller = @"Data Source=DESKTOP-AM54MG4\HOANGTOAN;Initial Catalog=PMBanDienThoai04;User ID=seller1;Password=123";
+        /*string ConnStr = @"Data Source=CONG-THANH-DESK\SQLEXPRESS;Initial Catalog=PMBanDienThoai;User ID=sa;Password=28072002";
+        string connAdmin = @"Data Source=CONG-THANH-DESK\SQLEXPRESS;Initial Catalog=PMBanDienThoai;User ID=sa;Password=28072002";
+        string connSeller = @"Data Source=CONG-THANH-DESK\SQLEXPRESS;Initial Catalog=PMBanDienThoai;User ID=sa;Password=28072002";*/
+        string ConnStr = @"Data Source=CONG-THANH-DESK\SQLEXPRESS;Initial Catalog=PMBanDienThoai;User ID=sa;Password=28072002";
+        string connAdmin = @"Data Source=CONG-THANH-DESK\SQLEXPRESS;Initial Catalog=PMBanDienThoai;User ID=admin1;Password=123";
+        string connSeller = @"Data Source=CONG-THANH-DESK\SQLEXPRESS;Initial Catalog=PMBanDienThoai;User ID=seller1;Password=123";
+        //string ConnStr = @"Data Source=CONG-THANH-DESK\SQLEXPRESS;Initial Catalog=PMBanDienThoai02;User ID=sa;Password=28072002";
         //string ConnStr = @"Data Source=" + datasource + ";Initial Catalog=" + database + ";Persist Security Info=True;User ID=" + username + ";Password=" + password;
         SqlConnection conn = null!;
         SqlCommand comm = null!;
@@ -25,6 +34,11 @@ namespace FutureWorldStore.Models
         public DBMain()
         {
             conn = new SqlConnection(ConnStr);
+            comm = conn.CreateCommand();
+        }
+        public DBMain(string role)
+        {
+            conn = role == "1" ? new SqlConnection(connAdmin) : new SqlConnection(connSeller);
             comm = conn.CreateCommand();
         }
         public DataSet ExecuteQueryDataSet(string strSQL, CommandType ct)

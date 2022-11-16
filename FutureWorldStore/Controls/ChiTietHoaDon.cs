@@ -12,18 +12,37 @@ namespace FutureWorldStore.Controls
     {
         DBMain db = null!;
         private string view = " v_infChiTietHoaDon";
-        public ChiTietHoaDon()
+        /*public ChiTietHoaDon()
         {
             db = new DBMain();
+        }*/
+
+        public ChiTietHoaDon(string role)
+        {
+            db = new DBMain(role);
         }
         public DataSet Get()
         {
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);
         }
-
-        public bool Add(string idChiTietHoaDon, string idHoaDon, string idDienThoai, string soLuong, string status, ref string err)
+        public DataSet GetID(string id = "HD07")
         {
-            string sqlString = $"exec sp_ReviseChiTietHoaDon '{idChiTietHoaDon}','{idHoaDon}',N'{idDienThoai}',N'{soLuong}',{status},'Insert'";
+            return db.ExecuteQueryDataSet($"select * from sp_ViewCTHD02('{id}')", CommandType.Text);
+        }
+
+        public DataSet SumMoneyCTHD(string id = "HD07")
+        {
+            return db.ExecuteQueryDataSet($"select dbo.fn_SumMoneyCTHD('{id}')", CommandType.Text);
+        }
+        public bool AddCTHD( string idHoaDon, string idDienThoai, string soLuong, string status, ref string err)
+        {
+            string sqlString = $"exec sp_ReviseChiTietHoaDon '{idHoaDon}',N'{idDienThoai}',N'{soLuong}',{status},'Insert'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+
+        public bool Add(string idHoaDon, string idDienThoai, string soLuong,string giaBan, string khuyenMai, string status, ref string err)
+        {
+            string sqlString = $"exec insert_CTHD '{idHoaDon}','{idDienThoai}','{soLuong}','{giaBan}','{khuyenMai}','{status}'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool Update(string idChiTietHoaDon, string idHoaDon, string idDienThoai, string soLuong, string status, ref string err)

@@ -14,6 +14,9 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup>
     <LangVersion>8.0</LangVersion>
@@ -134,43 +137,48 @@
     <Resource Include="Images\housekeeping_100px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\iphone_spinner_100px.png" />
+    <Resource Include="Images\logout.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\plus_+_100px.png" />
+    <Resource Include="Images\Change.png" />
+    <Resource Include="Images\Login1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\support_100px.png" />
+    <Resource Include="Images\BoderLL_DienThoai.png" />
+    <Resource Include="Images\Body3_DienThoai.png" />
+    <Resource Include="Images\header2_DienThoai.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\Delete_100px.png" />
+    <Resource Include="Images\IconWindows.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\housekeeping_100px.png" />
+    <Resource Include="Images\z3855608866922_194c80fdb20e854a2dc3937e5e98a071.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\search_more_100px.png" />
+    <Resource Include="Images\iphone_spinner_100px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\Login1.png" />
+    <Resource Include="search_more_100px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\Change.png" />
+    <Resource Include="Images\info_64px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\header2_DienThoai.png" />
+    <Resource Include="Images\ChiTietHoaDonn.png" />
+    <Resource Include="Images\CTHDT.png" />
+    <Resource Include="Images\header_CTHD.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\BoderLL_DienThoai.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Body3_DienThoai.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\z3855608866922_194c80fdb20e854a2dc3937e5e98a071.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\IconWindows.jpg" />
+    <Resource Include="Images\Body_inhoadon.png" />
+    <Resource Include="Images\header_inhoadon.png" />
+    <Resource Include="Images\L_Hoadon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets'))" />
+  </Target>
 </Project>

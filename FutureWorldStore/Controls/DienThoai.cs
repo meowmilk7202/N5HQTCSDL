@@ -12,10 +12,20 @@ namespace FutureWorldStore.Controls
     {
         DBMain db = null!;
         private string view = " v_infdienthoai";
-        public DienThoai()
+       /* public DienThoai()
         {
             db = new DBMain();
+        }*/
+        public DienThoai(string role)
+        {
+            db = new DBMain(role);
         }
+
+        public DataSet GetName()
+        {
+            return db.ExecuteQueryDataSet($"select distinct tenHangDT, idHangDT from {view}", CommandType.Text);
+        }
+
         public DataSet Get()
         {
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);
@@ -65,6 +75,10 @@ namespace FutureWorldStore.Controls
             return db.ExecuteQueryDataSet(sqlString, CommandType.Text);
         }
 
+        public DataSet SearchPhone(string tenDT)
+        {
+            return db.ExecuteQueryDataSet($"select * from fn_SearchPhone('{tenDT}')", CommandType.Text);
+        }
     }
 
 }

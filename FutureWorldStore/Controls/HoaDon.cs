@@ -12,24 +12,45 @@ namespace FutureWorldStore.Controls
         DBMain db = null!;
         private string view = " v_infHoaDon";
         private string view2 = " sp_thongKeTongDoanhThu";
-        public HoaDon()
+
+       /* public HoaDon()
         {
             db = new DBMain();
+        }*/
+        public HoaDon(string role)
+        {
+            db = new DBMain(role);
         }
+
+        public DataSet Top1BanChay()
+        {
+            return db.ExecuteQueryDataSet($"select * from ThongKeTop1BanChay()", CommandType.Text);
+        }
+
+        public DataSet LoiNhuanNgay(string date)
+        {
+            return db.ExecuteQueryDataSet($"select dbo.sp_LoiNhuanThuDuoc('{date}',1)", CommandType.Text);
+        }
+
+        public DataSet ThongKeDT(string date)
+        {
+            return db.ExecuteQueryDataSet($"Select * from fn_TKDTTheoNTN('{date}',1)", CommandType.Text);
+        }
+
+
         public DataSet Get()
         {
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);
         }
-
         public DataSet GetDT()
         {
             return db.ExecuteQueryDataSet($"exec {view2}", CommandType.Text);
         }
-        public bool Add(string idHoaDon, string idNV, string idKH, string status, ref string err)
+        public bool Add(string idHoaDon, string idNV, string idKH,string date, ref string err)
         {
-            string sqlString = $"exec sp_ReviseHoaDon '{idHoaDon}','{idNV}',N'{idKH}',{status},'Insert'";
+            string sqlString = $"exec sp_revise_HoaDon '{idHoaDon}','{idNV}','{idKH}','{date}'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
-        }
+        } 
         public bool Update(string idHoaDon, string idNV, string idKH, string status, ref string err)
         {
             string sqlString = $"exec sp_ReviseHoaDon '{idHoaDon}','{idNV}',N'{idKH}',{status},'Update'";

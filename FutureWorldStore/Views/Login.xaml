@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:FutureWorldStore.Views"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800"
-        Icon="/Views/z3855608866922_194c80fdb20e854a2dc3937e5e98a071.jpg">
+        Icon="../Images/z3855608866922_194c80fdb20e854a2dc3937e5e98a071.jpg">
     <Grid>
         <Grid.Background>
             <ImageBrush/>
@@ -17,7 +17,7 @@
         <Canvas x:Name="BG"
             Margin="-10,10,10,-10">
             <Canvas.Background>
-                <ImageBrush ImageSource="Change.png"/>
+                <ImageBrush ImageSource="../Images/Login1.png"/>
             </Canvas.Background>
         </Canvas>
 
@@ -56,7 +56,7 @@
                         BorderThickness="0"
                         VerticalContentAlignment="Center"
                         FontSize="16"
-                        Text="Tên tài khoản"
+                        Text="Tên Tài Khoản/ Số Điện Thoại / Email"
                         Opacity="0.6"
                         Foreground="#4a4a4a" GotFocus="txtUsername_GotFocus"
                         >

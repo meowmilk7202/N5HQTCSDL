@@ -12,10 +12,15 @@ namespace FutureWorldStore.Controls
     {
         DBMain db = null!;
         private string view = " v_infChiTietNhapKho";
-        public ChiTietNhapKho()
+       /* public ChiTietNhapKho()
         {
             db = new DBMain();
+        }*/
+        public ChiTietNhapKho(string role)
+        {
+            db = new DBMain(role);
         }
+
         public DataSet Get()
         {
             return db.ExecuteQueryDataSet($"select * from {view}", CommandType.Text);

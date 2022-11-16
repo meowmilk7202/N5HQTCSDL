@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:FutureWorldStore"
              StartupUri="Views/Login.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>

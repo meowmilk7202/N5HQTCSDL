@@ -22,10 +22,13 @@ namespace FutureWorldStore.Views
     {
         private FutureWorldStore.Views.Home homeWindow = null!;
         private string err = null!;
-        
+        protected string role = null!;
+        User user = new User();
+
         public Login()
         {
             InitializeComponent();
+            BG.Background = new ImageBrush(new BitmapImage(new Uri(System.IO.Path.GetFullPath("IMG\\Login1.png"))));
         }
         #region Xử lý
         private void txtUsername_GotFocus(object sender, RoutedEventArgs e)
@@ -50,22 +53,15 @@ namespace FutureWorldStore.Views
         // btn login chính
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string username = this.txtUsername.Text.Trim();
-            string password = this.txtPassword.Password.Trim();
+            user.Username = this.txtUsername.Text.Trim();
+            user.Password = this.txtPassword.Password.Trim();
 
-            bool res = false;
-
-            AuthenticationSystem authentication = new AuthenticationSystem();
-            DataSet ds = authentication.Login(username, password, ref err);
-            if (ds.Tables[0].Rows.Count > 0)
-                res = true;
-
-            if (res)
+            if (user.Login() == true)
             {
                 this.Hide();
-                homeWindow = new FutureWorldStore.Views.Home(this);
+                homeWindow = new Home(user);
                 homeWindow.Show();
-            }   
+            }
             else
             {
                 MessageBox.Show("Đăng nhập thất bại", "", MessageBoxButton.OK);
@@ -83,32 +79,24 @@ namespace FutureWorldStore.Views
         // btn change password chính
         private void btnLogin_Change_Click(object sender, RoutedEventArgs e)
         {
-            string username = this.txtUsername_Change.Text.Trim();
-            string password = this.txtPassword_Change.Password.Trim();
+            user.Username = this.txtUsername_Change.Text.Trim();
+            user.Password = this.txtPassword_Change.Password.Trim();
             string new_password = this.txtNewPassword_Change.Password.Trim();
             string re_password = this.txtRePassword_Change.Password.Trim();
 
-
-
-            AuthenticationSystem authentication = new AuthenticationSystem();
-            //string Staff_id, string Name, string Username, string Pass_word, string sdt, string email, ref string err
-            DataSet ds = authentication.Login(username, password, ref err);
-            if (ds.Tables[0].Rows.Count <= 0)
+            
+            if (!user.Login())
             {
                 MessageBox.Show("Tài khoản, mật khẩu chưa chính xác");
                 return;
             }
 
-            bool res = authentication.Change_Pass(username, password, new_password, re_password, ref err);
+            bool res = user.Change_Pass(user.Username, user.Password, new_password, re_password, ref err);
 
             if (res)
-            {
                 MessageBox.Show("Đổi mật khẩu thành công");
-            }
             else
-            {
-                MessageBox.Show("Đổi mật khẩu thất bại", "", MessageBoxButton.OK);
-            }
+                MessageBox.Show("Đổi mật khẩu thất bại", "Thông báo", MessageBoxButton.OK);
         }
 
         // btn chuyển qua trang login
