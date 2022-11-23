@@ -1,4 +1,4 @@
-﻿use PMBanDienThoai
+﻿use PMBanDienThoai03
 go
 ---Tạo nhóm quyền
 CREATE ROLE Manager
@@ -31,7 +31,7 @@ GRANT SELECT ON [dbo].[v_infNhaCungCap] TO Manager WITH GRANT OPTION
 GRANT SELECT ON [dbo].[v_infNhanVien] TO Manager WITH GRANT OPTION
 GRANT SELECT ON [dbo].[v_infNhapKho] TO Manager WITH GRANT OPTION
 GRANT SELECT ON [dbo].[v_loaddanhsachkho] TO Manager WITH GRANT OPTION
-
+GRANT SELECT ON [dbo].[v_infCTPNK] TO Manager WITH GRANT OPTION
 ---Thực thi các Procedure
 GRANT EXECUTE ON [dbo].[sp_addDienThoai] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_Changepassword]TO Manager WITH GRANT OPTION
@@ -40,19 +40,43 @@ GRANT EXECUTE ON [dbo].[sp_DeleteNCC] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_deleteKhachHang] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_DeleteNhanVien] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_deletePhone]TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_DeleteNhapKho]TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_revise_HoaDon]TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_ReviseHDT] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_reviseNCC] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_ReviseNhanVien] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_RevisePhone] TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_ReviseNhapKho]TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_themkhachhang] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_themNhanVien] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[sp_thongKeTongDoanhThu] TO Manager WITH GRANT OPTION
-
+GRANT EXECUTE ON [dbo].[insert_CTHD] TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[SapXepThongKeTopBanChay] TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_ViewCTHD] TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_TKDTTheoNTN] TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_SumSoTienBanDuoc] TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_Payment] TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_DeleteCTHDforHD] TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].sp_reviseKhachHang TO Manager WITH GRANT OPTION
 ---Thực thi Function
 GRANT SELECT ON [dbo].[fn_Authentication] TO Manager WITH GRANT OPTION
 GRANT SELECT ON [dbo].[fn_khachhang_sdt] TO Manager WITH GRANT OPTION
+GRANT SELECT ON [dbo].[fn_LoadFirm] TO Manager WITH GRANT OPTION
+GRANT SELECT ON [dbo].[fn_Login] TO Manager WITH GRANT OPTION
+GRANT SELECT ON [dbo].[fn_SearchPhone] TO Manager WITH GRANT OPTION
 GRANT SELECT ON [dbo].[fn_tinhtienhoadonkhachhang] TO Manager WITH GRANT OPTION
+GRANT SELECT ON [dbo].[fn_TKDTTheoNTN] TO Manager WITH GRANT OPTION
+GRANT SELECT ON [dbo].[sp_ViewCTHD02] TO Manager WITH GRANT OPTION
+GRANT SELECT ON [dbo].[ThongKe] TO Manager WITH GRANT OPTION
+GRANT SELECT ON [dbo].[ThongKeDienThoai] TO Manager WITH GRANT OPTION
+GRANT SELECT ON [dbo].[ThongKeTop1BanChay] TO Manager WITH GRANT OPTION
+
+
 GRANT EXECUTE ON [dbo].[fn_checkAccount]TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[fn_loinhuan_ngay] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[fn_slhoadon] TO Manager WITH GRANT OPTION
 GRANT EXECUTE ON [dbo].[fn_tonghoadon_per_day]TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[fn_SumMoneyCTHD]TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[fn_SumSoTienBanDuoc]TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_LoiNhuanThuDuoc]TO Manager WITH GRANT OPTION
+GRANT EXECUTE ON [dbo].[sp_LoiNhuanTucThoi]TO Manager WITH GRANT OPTION
